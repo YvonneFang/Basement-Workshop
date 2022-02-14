@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TimelineJS: API Test</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <!--<script src="https://d3js.org/d3.v7.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <!--Leaflet libs-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <!-- CSS-->
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="map" id="mapid1"></div>
+    <div class="map" id="mapid2"></div>
+    <div class="map" id="mapid3"></div>
+    <div class="map" id="mapid4"></div>
+    <div class="map" id="mapid5"></div>
+
+    <table>
+        <tr>
+            <td><button id="btn1">1970 - 1972</button></td>
+            <td><button id="btn2">1973 - 1975</button></td>
+            <td><button id="btn3">1976 - 1980</button></td>
+            <td><button id="btn4">1981 - 1985</button></td>
+            <td><button id="btn5">1986 - 2021</button></td>
+        </tr>
+    </table>
+
+    <section class="timeline">
+        <ol id="t7072">
+            <li>
+                <div class="histEvent" id="columbia">
+                    <time>1970</time>
+                    <p class="exact-time">Unknown</p>Danny Yung publishes the Chinatown Report<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="e54">
+                    <time>1970</time>
+                    <p class="exact-time">Spring</p>Basement Workshop Opens Their First Location<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="a613">
+                    <!--     need to set conditions for this manually       -->
+                    <time>Appx. 1970/1971</time>
+                    <p class="exact-time">Unknown Dates</p>Chickens Come Home to Roost Storefront (Community gathering
+                    and performance space) <br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="rockefeller">
+                    <time>1971</time>
+                    <p class="exact-time"></p> "New York: The Chinese Way" - Basement Workshop's campaign to promote
+                    tourism to Chinatown<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="e54b">
+                    <time>1971</time>
+                    <p class="exact-time"></p>Travel guide brochure for "New York: The Chinese Way"<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="c22a">
+                    <time>1972</time>
+                    <p class="exact-time">September</p>Basement Workshop Opens New Location on 3rd Floor of Building<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="c22c">
+                    <time>1972</time>
+                    <p class="exact-time">October 1</p>Brochure for Basement Workshop's Bridge Magazine<br>
+                </div>
+            </li>
+        </ol>
+
+        <ol id="t7375">
+            <li>
+                <div class="histEvent" id="eb32">
+                    <time>1973</time> Danny Yung’s Loft / Asian Cine-Vision<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="eb33">
+                    <time>1974</time>
+                    <p class="exact-time"></p>First performances at Asian American Dance Theatre<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="b17">
+                    <time>1974</time>
+                    <p class="exact-time">May</p>Basement Workshop and other Community Groups Protest Confucius Plaza
+                    Development <br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="eb1">
+                    <time>1974</time>Basement Workshop’s Community Planning Workshop arm / Michio Kaku’s Loft<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="l199">
+                    <time>1975 </time>
+                    <p class="exact-time">Unknown Month</p>Basement Workshop Expands to New Location (Keeps 22 Catherine
+                    Street for English classes and other programs)<br>
+                </div>
+            </li>
+        </ol>
+
+        <ol id="t7680">
+            <li>
+                <div class="histEvent" id="b26">
+                    <time>1976</time>
+                    <p class="exact-time"></p>Bob Lee opens the Asian American Arts Centre<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="c22d">
+                    <time>1976</time>
+                    <p class="exact-time"></p>Theatre group at Basement Worshop<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="b26a">
+                    <time>1978</time>
+                    <p class="exact-time">March 18</p>A presentation by Basement Workshop's Bridge Magazine at Asian
+                    American Dance Theater<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="c22b">
+                    <time>1980 </time>
+                    <p class="exact-time">Unknown Month</p>Basement Workshop Closes Lafayette and Returns Solely to 2nd
+                    Location<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="m70">
+                    <time>1980 </time>
+                    <p class="exact-time">Unknown Month</p> NY Chinatown History Project (Formerly BW, Eventually MOCA)
+                    <br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="e176">
+                    <time>1980 </time>
+                    <p class="exact-time">Unknown Month</p>Asian Americans for Equality offices <br>
+                </div>
+            </li>
+        </ol>
+
+        <ol id="t8185">
+            <li>
+                <div class="histEvent" id="c22e">
+                    <time>1982</time>
+                    <p class="exact-time">September</p>An exhibition by Basement Workshop's Catherine Street Artists
+                    Project showcasing works from 12 artists<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="c22f">
+                    <time>1985</time>
+                    <p class="exact-time">April</p>Play and poetry readings, exhibits, and workshops at Basement
+                    Workshop<br>
+                </div>
+            </li>
+        </ol>
+
+        <ol id="t8621">
+            <li>
+                <div class="histEvent" id="wow">
+                    <time>2021 </time>
+                    <p class="exact-time">August</p>The W.O.W. Project interview<br>
+                </div>
+            </li>
+        </ol>
+
+        <div class="arrows">
+            <button class="arrow arrow__prev disabled" disabled>
+                <img src="https://cdn.glitch.global/a5f0c00e-9553-4227-a327-3d110df5082e/prev.png?v=1644513361831"
+                    alt="prev timeline arrow">
+            </button>
+            <button class="arrow arrow__next">
+                <img src="https://cdn.glitch.global/a5f0c00e-9553-4227-a327-3d110df5082e/next.png?v=1644513350841"
+                    alt="next timeline arrow">
+            </button>
+        </div>
+    </section>
+    <!--Placing script at the bottom so map div will render before map object is initiated-->
+    <script src="app.js"></script>
+</body>
+
+</html>
