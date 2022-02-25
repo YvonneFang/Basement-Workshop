@@ -198,6 +198,11 @@ button {
 /* .histEvent{
    !important;
 } */
+
+.selected{
+  background-color: #0E0004 !important;
+  color: #FFF !important;
+}
   
   /* GENERAL MEDIA QUERIES
   –––––––––––––––––––––––––––––––––––––––––––––––––– */

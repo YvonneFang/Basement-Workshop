@@ -323,31 +323,47 @@ let selectedItem;
 
 //TODO - fix when clicking on time, event is not detected
 //TODO - add autoscroll to each last timeline section, vertical also
-for (let i = 0; i < histEventBtns.length; i++) {
-    histEventBtns[i].addEventListener('click', event => {
-        if (selectedItem) {
-            selectedItem.style.backgroundColor = "#FFF";
-        }
-        let clicked = event.target.querySelector("time");
-        // console.log(parseInt(clicked.innerHTML.match(/\d+/)[0],10));
-        let clickedYear = parseInt(clicked.innerHTML.match(/\d+/)[0], 10);
-        event.target.style.backgroundColor = "palegoldenrod";//have them move to center too
-        selectedItem = event.target;
-        if (clickedYear <= 1972) {
-            //console.log("here");
-            document.getElementById('btn1').click();
-        } else if (clickedYear > 1972 && clickedYear <= 1975) {
-            document.getElementById('btn2').click();
-            // console.log("here2");
-        } else if (clickedYear > 1975 && clickedYear <= 1980) {
-            document.getElementById('btn3').click();
-        } else if (clickedYear > 1980 && clickedYear <= 1986) {
-            document.getElementById('btn4').click();
-        } else {
-            document.getElementById('btn5').click();
-        }
-    });
-}
+// for (let i = 0; i < histEventBtns.length; i++) {
+//     histEventBtns[i].addEventListener('click', event => {
+//         if (selectedItem) {
+//             selectedItem.style.backgroundColor = "#FFF";
+//         }
+//         let clicked = event.target.querySelector("time");
+//         // console.log(parseInt(clicked.innerHTML.match(/\d+/)[0],10));
+//         let clickedYear = parseInt(clicked.innerHTML.match(/\d+/)[0], 10);
+//         // event.target.style.backgroundColor = "palegoldenrod";//have them move to center too
+//         selectedItem = event.target;
+//         if (clickedYear <= 1972) {
+//             //console.log("here");
+//             document.getElementById('btn1').click();
+//         } else if (clickedYear > 1972 && clickedYear <= 1975) {
+//             document.getElementById('btn2').click();
+//             // console.log("here2");
+//         } else if (clickedYear > 1975 && clickedYear <= 1980) {
+//             document.getElementById('btn3').click();
+//         } else if (clickedYear > 1980 && clickedYear <= 1986) {
+//             document.getElementById('btn4').click();
+//         } else {
+//             document.getElementById('btn5').click();
+//         }
+//     });
+// }
+
+document.addEventListener("DOMContentLoaded", function () {
+    var myitem = document.querySelectorAll(".histEvent");
+    for (var h = 0; h < myitem.length; h++) {
+        myitem[h].addEventListener("click", function (e) {
+            console.log("hiii");
+
+            for (h = 0; h < myitem.length; h++) {
+                myitem[h].classList.remove("selected");
+            }
+
+            this.classList.add("selected");
+
+        });
+    }
+});
 
 (function () {
 
