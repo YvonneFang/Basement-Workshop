@@ -1,5 +1,5 @@
 .map { 
-    height: 60vh; 
+    height: 65vh; 
     margin:10px;
     display:none;
 }
@@ -22,9 +22,10 @@ table {
 }
 
 td button{
-    font: bold 18px "Helvetica Neue", sans-serif;
+    font: bold 16px "Helvetica Neue", sans-serif;
     background-color:#A5907E;
-    padding:10px;
+    padding:8px;
+    border-radius: 5px;
 }
 
 td button:hover{
@@ -40,7 +41,7 @@ button {
   }
   
   body {
-    font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+    font: normal 14px/1.5 "Helvetica Neue", sans-serif;
     background: #211A38;
     color: #fff;
   }
@@ -87,48 +88,57 @@ button {
   .timeline ol {
     font-size: 0;
     width: 100vw;
-    padding: 190px 0;
+    padding-top: 130px;
+    padding-bottom: 20px;
     transition: all 1s;
+    /*--background: linear-gradient(270deg, rgba(165, 144, 126, 0.6) 63.41%, rgba(247, 212, 146, 0) 106.14%);--*/
   }
   
   .timeline ol li {
     position: relative;
     display: inline-block;
     list-style-type: none;
-    width: 160px;
-    height: 3px;
-    background: #A5907E;
+    width: 320px;
+    /* height: 8px; */
+    /* background: rgba(165, 144, 126, 0.4); */
+    border-width:6px;
+    border-top-style: dotted;
+    border-color:rgba(165, 144, 126, 0.4);
   }
   
   .timeline ol li:last-child {
-/*     width: 280px; */
+      /* width: 280px; */
   }
   
   .timeline ol li:not(:first-child) {
     margin-left: 14px;
   }
   
-  .timeline ol li:not(:last-child)::after {
+  .timeline ol li::after {
     content: '';
     position: absolute;
     top: 50%;
     left: calc(100% + 1px);
     bottom: 0;
-    width: 12px;
-    height: 12px;
+    width: 30px;
+    height: 30px;
     transform: translateY(-50%);
     border-radius: 50%;
-    background: #721121;
+    background: radial-gradient(circle, rgb(114, 17, 33) 0%, rgba(114,17,33,0) 79%);
+    top:-2px;
+    margin-left: -25px;
+    left:1px;
   }
   
   .timeline ol li div {
     position: absolute;
-    left: calc(100% + 7px);
-    width: 280px;
-    height:120px !important;
-    padding: 20px;
-    font-size: 16px;
+    /* left: calc(100% + 7px); */
+    width: 260px;
+    height: 100px !important;
+    padding: 12px;
+    font-size: 14px;
     white-space: normal;
+    line-height: normal;
     color: black;
     background: #A5907E;
   }
@@ -144,17 +154,18 @@ button {
     border-color:#A5907E;
   }
   
-  .timeline ol li:nth-child(odd) div {
+  .timeline ol li div {
     top: -16px;
     transform: translateY(-100%);
   }
   
-  .timeline ol li:nth-child(odd) div::before {
+  .timeline ol li div::before {
     top: 100%;
     border-width: 8px 8px 0 0;
     border-color: #A5907E transparent transparent transparent;
   }
   
+  /*--
   .timeline ol li:nth-child(even) div {
     top: calc(100% + 16px);
   }
@@ -164,6 +175,8 @@ button {
     border-width: 8px 0 0 8px;
     border-color: transparent transparent transparent #A5907E;
   }
+
+  --*/
   
   .timeline time {
     display: block;
@@ -278,8 +291,8 @@ img{
 
 .leaflet-popup-content{
   overflow-y:auto;
-  max-height:50vh !important;
-  width:50vw !important;
+  max-height:45vh !important;
+  width:40vw !important;
 }
 
 .leaflet-container{

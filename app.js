@@ -323,6 +323,7 @@ let selectedItem;
 
 //TODO - fix when clicking on time, event is not detected
 //TODO - add autoscroll to each last timeline section, vertical also
+
 // for (let i = 0; i < histEventBtns.length; i++) {
 //     histEventBtns[i].addEventListener('click', event => {
 //         if (selectedItem) {
@@ -353,14 +354,25 @@ document.addEventListener("DOMContentLoaded", function () {
     var myitem = document.querySelectorAll(".histEvent");
     for (var h = 0; h < myitem.length; h++) {
         myitem[h].addEventListener("click", function (e) {
-            console.log("hiii");
-
             for (h = 0; h < myitem.length; h++) {
                 myitem[h].classList.remove("selected");
             }
 
             this.classList.add("selected");
 
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var btnlist = document.querySelectorAll(".mapbtn");
+    for (var h = 0; h < btnlist.length; h++) {
+        btnlist[h].addEventListener("click", function (e) {
+            console.log("hiii2");
+            for (h = 0; h < btnlist.length; h++) {
+                btnlist[h].classList.remove("selected");
+            }
+            this.classList.add("selected");
         });
     }
 });
@@ -384,7 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function init() {
         setEqualHeights(elH);
         animateTl(xScrolling, arrows, timeline);
-        //   setSwipeFn(timeline, arrowPrev, arrowNext);
+        setSwipeFn(timeline, arrowPrev, arrowNext);
         setKeyboardFn(arrowPrev, arrowNext);
     }
 
@@ -460,12 +472,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // // ADD SWIPE SUPPORT FOR TOUCH DEVICES
-    // function setSwipeFn(tl, prev, next) {
-    //   const hammer = new Hammer(tl);
-    //   hammer.on("swipeleft", () => next.click());
-    //   hammer.on("swiperight", () => prev.click());
-    // }
+    // ADD SWIPE SUPPORT FOR TOUCH DEVICES
+    function setSwipeFn(tl, prev, next) {
+        const hammer = new Hammer(tl);
+        hammer.on("swipeleft", () => next.click());
+        hammer.on("swiperight", () => prev.click());
+    }
 
     // ADD BASIC KEYBOARD FUNCTIONALITY
     function setKeyboardFn(prev, next) {
