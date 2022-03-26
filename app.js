@@ -188,7 +188,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 let markers = [];
 
 let columbia = L.marker([40.80805168110775, -73.96308628414795], { title: "columbia" }).addTo(map1)
-    .bindPopup('<strong>Columbia Graduate School</strong><br><figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Chinatown_Report_1969_Danny_Yung_1970.pdf&embedded=true" frameborder="0" height="300px" width="auto"></iframe><figcaption>Under the guidance of Danny Yung and colleagues from Columbia University\'s Urban Center, the Chinatown Study Group was formed in 1969. The group set out to survey the needs of Chinatown residents. In 1970, the results of this preliminary study was published and fostered the generation of what would soon be known as the Basement Workshop. 1970. From Bob Lee and Eleanor Yung.</figcaption></figure>', { maxWidth: 800 });
+    .bindPopup('<strong>Columbia Graduate School</strong><br><figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Chinatown_Report_1969_Danny_Yung_1970.pdf" frameborder="0" height="300px" width="auto"></iframe><figcaption>Under the guidance of Danny Yung and colleagues from Columbia University\'s Urban Center, the Chinatown Study Group was formed in 1969. The group set out to survey the needs of Chinatown residents. In 1970, the results of this preliminary study was published and fostered the generation of what would soon be known as the Basement Workshop. 1970. From Bob Lee and Eleanor Yung.</figcaption></figure>', { maxWidth: 800 });
 markers.push(columbia);
 
 let e54 = L.marker([40.717373115072476, -73.99638905974999], { title: "e54" }).addTo(map1)
