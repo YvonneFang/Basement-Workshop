@@ -177,7 +177,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'your.mapbox.access.token'
 }).addTo(map5);
 
-//TODO - custom icons (what kind?)
+//TODO - custom pins color scheme consistent
 //TODO - when clicking on timeline, bubbles pop up automatically
 //TODO - check italics capitalization - publications, etc.
 //TODO - include archive source
@@ -188,24 +188,24 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 let markers = [];
 
 let columbia = L.marker([40.80805168110775, -73.96308628414795], { title: "columbia" }).addTo(map1)
-    .bindPopup('<strong>Columbia Graduate School</strong><br><figure><iframe src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FChinatown%20Report%201969_Danny%20Yung_1970.pdf?v=1632468028661&embedded=true" frameborder="0" height="300px" width="auto"></iframe><figcaption>Under the guidance of Danny Yung and colleagues from Columbia University\'s Urban Center, the Chinatown Study Group was formed in 1969. The group set out to survey the needs of Chinatown residents. In 1970, the results of this preliminary study was published and fostered the generation of what would soon be known as the Basement Workshop. 1970. From Bob Lee and Eleanor Yung.</figcaption></figure>', { maxWidth: 800 });
+    .bindPopup('<strong>Columbia Graduate School</strong><br><figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Chinatown_Report_1969_Danny_Yung_1970.pdf&embedded=true" frameborder="0" height="300px" width="auto"></iframe><figcaption>Under the guidance of Danny Yung and colleagues from Columbia University\'s Urban Center, the Chinatown Study Group was formed in 1969. The group set out to survey the needs of Chinatown residents. In 1970, the results of this preliminary study was published and fostered the generation of what would soon be known as the Basement Workshop. 1970. From Bob Lee and Eleanor Yung.</figcaption></figure>', { maxWidth: 800 });
 markers.push(columbia);
 
 let e54 = L.marker([40.717373115072476, -73.99638905974999], { title: "e54" }).addTo(map1)
-    .bindPopup('<strong>54 Elizabeth Street</strong><br>The first location of Basement Workshop.<br><figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2F0001.jpg?v=1632502290031" alt="a letter" onclick="zoomImage(this.src)"><figcaption>A letter from Basement members seeking financial support and artistic contributions for the Amerasia Song and Poetry Project, which would soon be known as Yellow Pearl. 1971.</figcaption></figure>'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FYellow%20Pearl%20Excerpt%201972.png?v=1632466509445" alt="a page containing an illustration of a puppet playing the guitar and a poem" onclick="zoomImage(this.src)"><figcaption>An excerpt from Basement\'s arts anthology, Yellow Pearl. Poem by Takashi Yanagida, illustration by Larry Hama. 1972. Courtesy of Museum of Chinese in America (MOCA) Basement Workshop Collection.</figcaption></figure>');
+    .bindPopup('<strong>54 Elizabeth Street</strong><br>The first location of Basement Workshop.<br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Amerasia_Song_And_Poetry.jpg" alt="a letter" onclick="zoomImage(this.src)"><figcaption>A letter from Basement members seeking financial support and artistic contributions for the Amerasia Song and Poetry Project, which would soon be known as Yellow Pearl. 1971.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Yellow_Pearl_Excerpt_1972.png" alt="a page containing an illustration of a puppet playing the guitar and a poem" onclick="zoomImage(this.src)"><figcaption>An excerpt from Basement\'s arts anthology, Yellow Pearl. Poem by Takashi Yanagida, illustration by Larry Hama. 1972. Courtesy of Museum of Chinese in America (MOCA) Basement Workshop Collection.</figcaption></figure>');
 markers.push(e54);
 
 let c22a = L.marker([40.713193857598824, -73.99733957337108], { title: "c22a" }).addTo(map1)
     .bindPopup('<strong>22 Catherine Street</strong><br>Basement Workshop\'s new location in 1972.'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FChinatown%20Coloring%20Book%20Excerpt%201973.jpg?v=1633168136293" alt="two blank pages in a coloring book with turtle and umbrella graphics" onclick="zoomImage(this.src)"><figcaption>Two pages from the Chinatown Coloring Book project coordinated by Susan Yung which included drawings and sketches from Chinatown youth. 2,000 copies were distributed for free to children in Chinatown. Basement members, Tomie Arai illustrated page 32 and Karl Matsuda illustrated page 33 shown here. 1973. NYU A/P/A Collection.</figcaption></figure>'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FAmerican%20Born%20and%20Foreign%20Order%20Form%201979_page-0001.jpg?v=1633113596217" alt="a blank form" onclick="zoomImage(this.src)"><figcaption>An order form for purchasing copies of the American Born and Foreign poetry anthology, produced by the Basement Workshop and published by Sunbury Press. 1979. MSS 292, Box 1, folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FLinda%20Lew%20and%20William%20Leung%20nd.jpg?v=1633168145646" alt="image of kids with paper cups sitting in a circle looking at an illustrated page" onclick="zoomImage(this.src)"><figcaption>Linda Lew and William Leung in an Amerasia Creative Arts meeting. No date. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FFay%20Chiang%20and%20Peter%20Pan%20nd.jpg?v=1633168160778" alt="image of two people standing in front of a message board"><figcaption>Fay Chiang and Peter Pan stand near the message board at Basement Workshop. No date. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>');
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Chinatown_Coloring_Book_Excerpt_1973.jpg" alt="two blank pages in a coloring book with turtle and umbrella graphics" onclick="zoomImage(this.src)"><figcaption>Two pages from the Chinatown Coloring Book project coordinated by Susan Yung which included drawings and sketches from Chinatown youth. 2,000 copies were distributed for free to children in Chinatown. Basement members, Tomie Arai illustrated page 32 and Karl Matsuda illustrated page 33 shown here. 1973. NYU A/P/A Collection.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/American_Born_and_Foreign_Order_Form_1979_page-0001.jpg" alt="a blank form" onclick="zoomImage(this.src)"><figcaption>An order form for purchasing copies of the American Born and Foreign poetry anthology, produced by the Basement Workshop and published by Sunbury Press. 1979. MSS 292, Box 1, folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Linda_Lew_and_William_Leung_nd.jpg" alt="image of kids with paper cups sitting in a circle looking at an illustrated page" onclick="zoomImage(this.src)"><figcaption>Linda Lew and William Leung in an Amerasia Creative Arts meeting. No date. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Fay_Chiang_and_Peter_Pan_nd.jpg" alt="image of two people standing in front of a message board"><figcaption>Fay Chiang and Peter Pan stand near the message board at Basement Workshop. No date. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>');
 markers.push(c22a);
 
 let c22c = L.marker([40.71305223095968, -73.99749747628213], { title: "c22c" }).addTo(map1)
-    .bindPopup('<strong>22 Catherine Street</strong><br>' + '<figure><img src="assets/19721001_Bridge_Info_Brochure_Pg_1_NYU_Tamiment.jpeg" alt="a page with text stating the aims of Bridge Magazine" onclick="zoomImage(this.src)"><figcaption>Page 1 of a brochure detailing the mission of Basement Workshop\'s Bridge Magazine which called itself "the Magazine for Asians in America. October 1, 1972."</figcaption ></figure > ');
+    .bindPopup('<strong>22 Catherine Street</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19721001_Bridge+Info+Brochure+Pg+1_NYU+Tamiment.jpeg" alt="a page with text stating the aims of Bridge Magazine" onclick="zoomImage(this.src)"><figcaption>Page 1 of a brochure detailing the mission of Basement Workshop\'s Bridge Magazine which called itself "the Magazine for Asians in America. October 1, 1972."</figcaption ></figure > ');
 markers.push(c22c);
 
 let a613 = L.marker([40.79019689284264, -73.97315536954741], { title: "a613" }).addTo(map1)
@@ -213,11 +213,11 @@ let a613 = L.marker([40.79019689284264, -73.97315536954741], { title: "a613" }).
 markers.push(a613);
 
 let rockefeller = L.marker([40.758874270103725, -73.97870578862735], { title: "rockefeller" }).addTo(map1)
-    .bindPopup('<strong>Rockefeller Center</strong><br>' + '<figure><img src="assets/1971_Eleanor_BW Flyering_Photo_2.jpg" alt="a smiling woman handing out brochures to passersby" onclick="zoomImage(this.src)"><figcaption>Basement Workshop members handing out brochures to passersby at Rockefeller Center. Part of a campaign called "New York: The Chinese Way" to promote tourism to Chinatown.</figcaption></figure>');
+    .bindPopup('<strong>Rockefeller Center</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1971_Eleanor+BW+Flyering+Photo+2.jpg" alt="a smiling woman handing out brochures to passersby" onclick="zoomImage(this.src)"><figcaption>Basement Workshop members handing out brochures to passersby at Rockefeller Center. Part of a campaign called "New York: The Chinese Way" to promote tourism to Chinatown.</figcaption></figure>');
 markers.push(rockefeller);
 
 let e54b = L.marker([40.71724768682543, -73.9964573754843], { title: "e54b" }).addTo(map1)
-    .bindPopup('<strong>54 Elizabeth Street</strong><br>' + '<figure><img src="assets/1971_BW_New_York_Chinese_Way_Brochure_Page_1_NYU_Tamiment.jpeg" alt="a cover page with lion dance imagery and the text New York: the Chinese Way" onclick="zoomImage(this.src)"><figcaption>Front cover of the travel guide brochure, "New York: The Chinese Way," a project to "inform New Yorkers about Chinese eating, our festivals, our operas, our social issues..."</figcaption></figure>');
+    .bindPopup('<strong>54 Elizabeth Street</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1971_BW+New+York+Chinese+Way+Brochure+Page+1_NYU+Tamiment.jpeg" alt="a cover page with lion dance imagery and the text New York: the Chinese Way" onclick="zoomImage(this.src)"><figcaption>Front cover of the travel guide brochure, "New York: The Chinese Way," a project to "inform New Yorkers about Chinese eating, our festivals, our operas, our social issues..."</figcaption></figure>');
 markers.push(e54b);
 
 let eb32 = L.marker([40.71394508120349, -73.99650475988331], { title: "eb32" }).addTo(map2)
@@ -225,7 +225,7 @@ let eb32 = L.marker([40.71394508120349, -73.99650475988331], { title: "eb32" }).
 markers.push(eb32);
 
 let eb33 = L.marker([40.71352469221002, -73.99653744599264], { title: "eb33" }).addTo(map2)
-    .bindPopup('<strong>Chatham Square Library - 33 E. Broadway</strong><br>' + '<figure><img src="assets/1986_AADT_Event_Eleanor_Performance.jpg" alt="a woman dancing in traditional clothing" onclick="zoomImage(this.src)"><figcaption>One of the first performances of Asian American Dance Theatre which shared a building with Asian American Arts Centre in 1974 was held in the Chatham Square Library on East Broadway.(This particular photo is from a performance in 1986.)</figcaption></figure>');
+    .bindPopup('<strong>Chatham Square Library - 33 E. Broadway</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1986_AADT+Event+Eleanor+Performance.jpg" alt="a woman dancing in traditional clothing" onclick="zoomImage(this.src)"><figcaption>One of the first performances of Asian American Dance Theatre which shared a building with Asian American Arts Centre in 1974 was held in the Chatham Square Library on East Broadway.(This particular photo is from a performance in 1986.)</figcaption></figure>');
 markers.push(eb33);
 
 let b17 = L.marker([40.71477514624291, -73.99684571755508], { title: "b17" }).addTo(map2)
@@ -240,9 +240,9 @@ markers.push(eb1);
 let l199 = L.marker([40.721469061560114, -73.99781341755894], { title: "l199" }).addTo(map2)
     .bindPopup('<strong>199 Lafayette Street</strong><br>The new location that Basement Workshop expanded to in 1975.<br>' +
         '<figure><iframe src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FBW%20Calendar%201976.pdf?v=1632815430707" frameborder="0" height="300px" width="auto"></iframe><figcaption>Artists at the Basement Workshop produce a 1976 calendar with original artwork showcasing examples of worker movements. 1975. MSS 292, Box 53, folder 3. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FDance%20Flyer%20for%20Chin%20Young%20Legal%20Fund%201976_page-0001.jpg?v=1632465149624" alt="black & white poster for a dance party" onclick="zoomImage(this.src)"><figcaption>A flyer for a dance party at Basement benefitting the legal fund for defending Basement members, Elizabeth Young and Kenny Chin, in their wrongful accusation of an assassination attempt and illegal search & seizure. November 1976. MSS 292, Box 1, folder 20. Courtesy of Fales Library and Special Collections, New York University. </figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Dance_Flyer_for_Chin_Young_Legal_Fund_1976_page-0001.jpg" alt="black & white poster for a dance party" onclick="zoomImage(this.src)"><figcaption>A flyer for a dance party at Basement benefitting the legal fund for defending Basement members, Elizabeth Young and Kenny Chin, in their wrongful accusation of an assassination attempt and illegal search & seizure. November 1976. MSS 292, Box 1, folder 20. Courtesy of Fales Library and Special Collections, New York University. </figcaption></figure>'
         + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FWe%20Wont%20Move%20Photo%20Exhibit%20Information%201977_page-0001.jpg?v=1632465930431" alt="a flyer with text describing information about a photo exhibit" onclick="zoomImage(this.src)"><figcaption>A flyer chronicling the joint collaboration between the Basement Workshop and San Francisco\'s Kearny Street Workshop in producing a photo exhibit examining the fight for the International Hotel in SF. December 15, 1977. MSS 292, Box 1, folder 20. Courtesy of Fales Library and Special Collections, New York University. </figcaption></figure>'
-        + '<figure><iframe src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FBasement%20Editions%20Ad%201978.pdf?v=1633113153781&embedded=true" frameborder="0" height="300px" width="auto"><figcaption>A mailer advertisement for purchasing poetry series publications from contemporary Asian American poets, Mei-mei Berssenbrugge, Lawson Fusao Inada, Jessica Hagedorn, and Ntozake Shange. Summer 1978. MSS 292, Box 1, folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>'
+        + '<figure><iframe src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FBasement%20Editions%20Ad%201978.pdf?v=1633113153781&embedded=true" frameborder="0" height="300px" width="auto"></iframe><figcaption>A mailer advertisement for purchasing poetry series publications from contemporary Asian American poets, Mei-mei Berssenbrugge, Lawson Fusao Inada, Jessica Hagedorn, and Ntozake Shange. Summer 1978. MSS 292, Box 1, folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>'
         + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FAmerican%20Born%20and%20Foreign%20Flyer%201979_page-0001.jpg?v=1633111820819" alt="a black & white flyer" onclick="zoomImage(this.src)"><figcaption>A flyer for the release party for Asian American poetry anthology, American Born and Foreign. May 19, 1979. MSS 292, Box 1, folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>');
 markers.push(l199);
 
@@ -368,37 +368,77 @@ document.addEventListener("DOMContentLoaded", function () {
     var btnlist = document.querySelectorAll(".mapbtn");
     for (var h = 0; h < btnlist.length; h++) {
         btnlist[h].addEventListener("click", function (e) {
-            console.log("hiii2");
             for (h = 0; h < btnlist.length; h++) {
                 btnlist[h].classList.remove("selected");
             }
             this.classList.add("selected");
+            setScroll();
         });
     }
 });
 
-(function () {
+// START
+window.addEventListener("load", init);
+
+function init() {
+    setScroll();
+}
+
+function setScroll() {
+    let TL1 = document.getElementById('t7072');
+    let TL2 = document.getElementById('t7375');
+    let TL3 = document.getElementById('t7680');
+    let TL4 = document.getElementById('t8185');
+    let TL5 = document.getElementById('t8621');
 
     // VARIABLES
-    const timeline = document.querySelector(".timeline ol"),
-        elH = document.querySelectorAll(".timeline li > div"),
+    const elH = document.querySelectorAll(".timeline li > div"),
         arrows = document.querySelectorAll(".timeline .arrows .arrow"),
         arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
         arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
-        firstItem = document.querySelector(".timeline li:first-child"),
-        lastItem = document.querySelector(".timeline li:last-child"),
         xScrolling = 280,
         disabledClass = "disabled";
+    let timeline = null;
+    let firstItem = null;
+    let lastItem = null;
 
-    // START
-    window.addEventListener("load", init);
-
-    function init() {
-        setEqualHeights(elH);
-        animateTl(xScrolling, arrows, timeline);
-        setSwipeFn(timeline, arrowPrev, arrowNext);
-        setKeyboardFn(arrowPrev, arrowNext);
+    if (window.getComputedStyle(TL1).display == "block") {
+        // console.log(document.querySelector(".timeline li:first-child"));
+        console.log(TL1);
+        timeline = TL1;
+        firstItem = TL1.querySelector("li:first-child");
+        lastItem = TL1.querySelector("li:last-child");
+    } else if (window.getComputedStyle(TL2).display == "block") {
+        console.log("tl2 displayed");
+        timeline = TL2;
+        firstItem = TL2.querySelector("li:first-child");
+        lastItem = TL2.querySelector("li:last-child");
+    } else if (window.getComputedStyle(TL3).display == "block") {
+        timeline = TL3;
+        firstItem = TL3.querySelector("li:first-child");
+        lastItem = TL3.querySelector("li:last-child");
+    } else if (window.getComputedStyle(TL4).display == "block") {
+        timeline = TL4;
+        firstItem = TL4.querySelector("li:first-child");
+        lastItem = TL4.querySelector("li:last-child");
+    } else if (window.getComputedStyle(TL5).display == "block") {
+        timeline = TL5;
+        firstItem = TL5.querySelector("li:first-child");
+        lastItem = TL5.querySelector("li:last-child");
     }
+
+    // // START
+    // window.addEventListener("load", init);
+
+    // function init() {
+    setEqualHeights(elH);
+    console.log("here!!!!");
+    setBtnState(arrowPrev);
+    setBtnState(arrowNext, false);
+    animateTl(xScrolling, arrows, timeline);
+    setSwipeFn(timeline, arrowPrev, arrowNext);
+    setKeyboardFn(arrowPrev, arrowNext);
+    // }
 
     // SET EQUAL HEIGHTS
     function setEqualHeights(el) {
@@ -444,6 +484,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function animateTl(scrolling, el, tl) {
         let counter = 0;
         for (let i = 0; i < el.length; i++) {
+            console.log(el);
+
             el[i].addEventListener("click", function () {
                 if (!arrowPrev.disabled) {
                     arrowPrev.disabled = true;
@@ -451,7 +493,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!arrowNext.disabled) {
                     arrowNext.disabled = true;
                 }
-                const sign = (this.classList.contains("arrow__prev")) ? "" : "-";
+                console.log("here");
+
+                const sign = (this.classList.contains("arrow__prev")) ? "" : "-";//prev positive, next negative
                 if (counter === 0) {
                     tl.style.transform = `translateX(-${scrolling}px)`;
                 } else {
@@ -461,12 +505,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
                     tl.style.transform = `translateX(${values}px)`;
                 }
-
                 setTimeout(() => {
                     isElementInViewport(firstItem) ? setBtnState(arrowPrev) : setBtnState(arrowPrev, false);
                     isElementInViewport(lastItem) ? setBtnState(arrowNext) : setBtnState(arrowNext, false);
+                    console.log(isElementInViewport(firstItem));
+                    console.log(isElementInViewport(lastItem));
                 }, 1100);
-
                 counter++;
             });
         }
@@ -497,6 +541,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-})();
-
-
+};
