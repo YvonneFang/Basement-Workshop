@@ -88,7 +88,7 @@ button {
   .timeline ol {
     font-size: 0;
     width: 100vw;
-    padding-top: 130px;
+    padding-top: 150px;
     padding-bottom: 20px;
     transition: all 1s;
     /*--background: linear-gradient(270deg, rgba(165, 144, 126, 0.6) 63.41%, rgba(247, 212, 146, 0) 106.14%);--*/
@@ -99,11 +99,11 @@ button {
     display: inline-block;
     list-style-type: none;
     width: 320px;
-    /* height: 8px; */
-    /* background: rgba(165, 144, 126, 0.4); */
-    border-width:6px;
+    height: 3px;
+    background: rgba(165, 144, 126, 1);
+    /* border-width:6px;
     border-top-style: dotted;
-    border-color:rgba(165, 144, 126, 0.4);
+    border-color:rgba(165, 144, 126, 0.4); */
   }
   
   .timeline ol li:last-child {
@@ -120,13 +120,12 @@ button {
     top: 50%;
     left: calc(100% + 1px);
     bottom: 0;
-    width: 30px;
-    height: 30px;
+    width: 12px;
+    height: 12px;
     transform: translateY(-50%);
     border-radius: 50%;
-    background: radial-gradient(circle, rgb(114, 17, 33) 0%, rgba(114,17,33,0) 79%);
-    top:-2px;
-    margin-left: -25px;
+    background: rgb(114, 17, 33);
+    margin-left: -14px;
     left:1px;
   }
   
@@ -141,6 +140,7 @@ button {
     line-height: normal;
     color: black;
     background: #A5907E;
+    border-radius:5px 5px 5px 0;
   }
   
   .timeline ol li div::before {
@@ -201,11 +201,36 @@ button {
   
   .timeline .disabled {
     opacity: .5;
+    pointer-events: none;
   }
   
   .timeline .arrows img {
     width: 45px;
     height: 45px;
+  }
+
+  .timeline .arrow__prev:hover{
+    -webkit-filter: brightness(70%);
+	-moz-filter: brightness(70%);
+	-o-filter: brightness(70%);
+	-ms-filter: brightness(70%);
+	filter: brightness(70%);
+  }
+
+  .timeline .arrow__next:hover{
+    -webkit-filter: brightness(70%);
+	-moz-filter: brightness(70%);
+	-o-filter: brightness(70%);
+	-ms-filter: brightness(70%);
+	filter: brightness(70%);
+  }
+
+  .timeline .disabled:hover{
+    -webkit-filter: brightness(70%) !important;
+    -moz-filter: brightness(70%) !important;
+    -o-filter: brightness(70%) !important;
+    -ms-filter: brightness(70%) !important;
+    filter: brightness(70%) !important;
   }
   
 /* .histEvent{
@@ -234,6 +259,7 @@ button {
       display: block;
       height: auto;
       background: transparent;
+      border: none;
     }
     
     .timeline ol li:first-child {
@@ -254,12 +280,11 @@ button {
       position: static;
     }
     
-    .timeline ol li:nth-child(odd) div {
+    .timeline ol li div {
       transform: none;
     }
     
-    .timeline ol li:nth-child(odd) div::before,
-    .timeline ol li:nth-child(even) div::before {
+    .timeline ol li div::before {
       left: 50%;
       top: 100%;
       transform: translateX(-50%);
