@@ -36,6 +36,19 @@ var zoomImage = function (_src) {
 // var zoomImage = function(){
 //   document.getElementById("img1").style.transform="scale(5)";
 // };
+let languageButton = document.getElementById("language");
+
+function switch_lang() {
+
+    if (languageButton.innerHTML === 'Japanese') {
+        console.log("here");
+        languageButton.href = 'index_japanese.html';
+        // languageButton.innerHTML = 'English';
+    } else if (languageButton.innerHTML === "English") {
+        languageButton.href = 'index.html';
+        // languageButton.innerHTML = 'Japanese';
+    }
+}
 
 let map1 = L.map('mapid1').setView([40.78348090367126, -73.9695765463863], 12);//need to tweak the zoom
 let map2 = L.map('mapid2').setView([40.71952149071173, -73.99906679108679], 15);
@@ -188,12 +201,12 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 let markers = [];
 
 let columbia = L.marker([40.80805168110775, -73.96308628414795], { title: "columbia" }).addTo(map1)
-    .bindPopup('<strong>Columbia Graduate School</strong><br><figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Chinatown_Report_1969_Danny_Yung_1970.pdf" frameborder="0" height="300px" width="auto"></iframe><figcaption>Under the guidance of Danny Yung and colleagues from Columbia University\'s Urban Center, the Chinatown Study Group was formed in 1969. The group set out to survey the needs of Chinatown residents. In 1970, the results of this preliminary study was published and fostered the generation of what would soon be known as the Basement Workshop. 1970. From Bob Lee and Eleanor Yung.</figcaption></figure>', { maxWidth: 800 });
+    .bindPopup('<strong>Columbia Graduate School</strong><br><figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Chinatown_Report_1969_Danny_Yung_1970.pdf&embedded=true" alt="the scan of the full "Chinatown Report"" frameborder="0" height="300px" width="auto"></iframe><figcaption>Under the guidance of Danny Yung and colleagues from Columbia University\'s Urban Center, the Chinatown Study Group was formed in 1969. The group set out to survey the needs of Chinatown residents. In 1970, the results of this preliminary study was published and fostered the generation of what would soon be known as the Basement Workshop. 1970. From Bob Lee and Eleanor Yung.</figcaption></figure>', { maxWidth: 800 });
 markers.push(columbia);
 
 let e54 = L.marker([40.717373115072476, -73.99638905974999], { title: "e54" }).addTo(map1)
-    .bindPopup('<strong>54 Elizabeth Street</strong><br>The first location of Basement Workshop.<br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Amerasia_Song_And_Poetry.jpg" alt="a letter" onclick="zoomImage(this.src)"><figcaption>A letter from Basement members seeking financial support and artistic contributions for the Amerasia Song and Poetry Project, which would soon be known as Yellow Pearl. 1971.</figcaption></figure>'
-        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Yellow_Pearl_Excerpt_1972.png" alt="a page containing an illustration of a puppet playing the guitar and a poem" onclick="zoomImage(this.src)"><figcaption>An excerpt from Basement\'s arts anthology, Yellow Pearl. Poem by Takashi Yanagida, illustration by Larry Hama. 1972. Courtesy of Museum of Chinese in America (MOCA) Basement Workshop Collection.</figcaption></figure>');
+    .bindPopup('<strong>54 Elizabeth Street</strong><br>The first location of Basement Workshop.<br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Amerasia_Song_And_Poetry.jpg" alt="a letter with illustrations and the title "Amerasia Song and Poetry Project"" onclick="zoomImage(this.src)"><figcaption>A letter from Basement members seeking financial support and artistic contributions for the <i>Amerasia Song and Poetry Project</i>, which became <i>Yellow Pearl</i>. <i>Amerasia Song and Poetry Project</i> Letter, 1971; Yoshio Kishi and Irene Yah-Ling Sun Collection; MSS.292; Box 1; Folder 20; Fales Library and Special Collections, New York University.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Yellow_Pearl_Excerpt_1972.png" alt="a page containing a poem and an illustration of a puppet playing the guitar" onclick="zoomImage(this.src)"><figcaption>An excerpt from Basement\'s arts anthology, <i>Yellow Pearl</i>. Poem by Takashi Yanagida, illustration by Larry Hama. 1972. Courtesy of Museum of Chinese in America (MOCA) Basement Workshop Collection.</figcaption></figure>');
 markers.push(e54);
 
 let c22a = L.marker([40.713193857598824, -73.99733957337108], { title: "c22a" }).addTo(map1)
@@ -205,7 +218,7 @@ let c22a = L.marker([40.713193857598824, -73.99733957337108], { title: "c22a" })
 markers.push(c22a);
 
 let c22c = L.marker([40.71305223095968, -73.99749747628213], { title: "c22c" }).addTo(map1)
-    .bindPopup('<strong>22 Catherine Street</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19721001_Bridge+Info+Brochure+Pg+1_NYU+Tamiment.jpeg" alt="a page with text stating the aims of Bridge Magazine" onclick="zoomImage(this.src)"><figcaption>Page 1 of a brochure detailing the mission of Basement Workshop\'s Bridge Magazine which called itself "the Magazine for Asians in America. October 1, 1972."</figcaption ></figure > ');
+    .bindPopup('<strong>22 Catherine Street</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19721001_Bridge+Info+Brochure+Pg+1_NYU+Tamiment.jpeg" alt="a page with text stating the aims of "Bridge Magazine"" onclick="zoomImage(this.src)"><figcaption>Page 1 of a brochure detailing the mission of Basement Workshop\'s Bridge Magazine which called itself "the Magazine for Asians in America." October 1, 1972.</figcaption ></figure > ');
 markers.push(c22c);
 
 let a613 = L.marker([40.79019689284264, -73.97315536954741], { title: "a613" }).addTo(map1)
@@ -213,57 +226,59 @@ let a613 = L.marker([40.79019689284264, -73.97315536954741], { title: "a613" }).
 markers.push(a613);
 
 let rockefeller = L.marker([40.758874270103725, -73.97870578862735], { title: "rockefeller" }).addTo(map1)
-    .bindPopup('<strong>Rockefeller Center</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1971_Eleanor+BW+Flyering+Photo+2.jpg" alt="a smiling woman handing out brochures to passersby" onclick="zoomImage(this.src)"><figcaption>Basement Workshop members handing out brochures to passersby at Rockefeller Center. Part of a campaign called "New York: The Chinese Way" to promote tourism to Chinatown.</figcaption></figure>');
+    .bindPopup('<strong>Rockefeller Center</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/BW+eleanor036a.jpg" alt="a man and a woman handing out brochures to passersby" onclick="zoomImage(this.src)"><figcaption>Basement Workshop members handing out brochures to passersby at Rockefeller Center. Part of a campaign called "New York: The Chinese Way" to promote tourism to Chinatown.</figcaption></figure>');
 markers.push(rockefeller);
 
 let e54b = L.marker([40.71724768682543, -73.9964573754843], { title: "e54b" }).addTo(map1)
-    .bindPopup('<strong>54 Elizabeth Street</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1971_BW+New+York+Chinese+Way+Brochure+Page+1_NYU+Tamiment.jpeg" alt="a cover page with lion dance imagery and the text New York: the Chinese Way" onclick="zoomImage(this.src)"><figcaption>Front cover of the travel guide brochure, "New York: The Chinese Way," a project to "inform New Yorkers about Chinese eating, our festivals, our operas, our social issues..."</figcaption></figure>');
+    .bindPopup('<strong>54 Elizabeth Street</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1971_BW+New+York+Chinese+Way+Brochure+Page+1_NYU+Tamiment.jpeg" alt="a cover page with lion dance imagery and the text "New York: the Chinese Way"" onclick="zoomImage(this.src)"><figcaption>Front cover of the travel guide brochure, "New York: The Chinese Way," a project to "inform New Yorkers about Chinese eating, our festivals, our operas, our social issues..." New York: The Chinese Way Brochure, 1971; Asian American Arts Centre Records; TAM.613; Box 1; Tamiment Library/ Robert F. Wagner Labor Archives, New York University.</figcaption></figure>');
 markers.push(e54b);
 
 let eb32 = L.marker([40.71394508120349, -73.99650475988331], { title: "eb32" }).addTo(map2)
-    .bindPopup('<strong>32 East Broadway</strong><br>Danny Yung\'s loft, which became Asian Cine-Vision.');
+    .bindPopup('<strong>32 East Broadway</strong><br>Danny Yung\'s loft, which became Asian Cine-Vision, an organization that showcases and preserves films created by or feature peoples of Asian descent.');
 markers.push(eb32);
 
 let eb33 = L.marker([40.71352469221002, -73.99653744599264], { title: "eb33" }).addTo(map2)
-    .bindPopup('<strong>Chatham Square Library - 33 E. Broadway</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1986_AADT+Event+Eleanor+Performance.jpg" alt="a woman dancing in traditional clothing" onclick="zoomImage(this.src)"><figcaption>One of the first performances of Asian American Dance Theatre which shared a building with Asian American Arts Centre in 1974 was held in the Chatham Square Library on East Broadway.(This particular photo is from a performance in 1986.)</figcaption></figure>');
+    .bindPopup('<strong>Chatham Square Library - 33 E. Broadway</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1986_AADT+Event+Eleanor+Performance.jpg" alt="a woman dancing in traditional clothing" onclick="zoomImage(this.src)"><figcaption>One of the first performances of Asian American Dance Theatre was held in the Chatham Square Library on East Broadway in the fourth floor area in 1974. Courtesy of Asian American Arts Centre.</figcaption></figure>');
 markers.push(eb33);
 
 let b17 = L.marker([40.71477514624291, -73.99684571755508], { title: "b17" }).addTo(map2)
-    .bindPopup('<strong>Bowery and Division Streets</strong><br>(Location not exact. This is the current site of Confucius Plaza.)' + '<figure><img src="assets/19740531_Confucius_Plaza_Protest_Mary_Uyematsu_Kao.jpg" alt="a group of protesters holding signs and megaphone" onclick="zoomImage(this.src)"><figcaption>At Confucius Plaza, a group of protesters march against discriminatory hiring practices committed by the DeMatteis Corporation. They refused to hire any Asian construction workers for a new high-rise affordable housing apartment complex in the heart of Chinatown. Basement Workshop\'s Kin Wah Chin holds a megaphone. May 31, 1974. Photo by Mary Uyematsu Kao."</figcaption></figure>');
+    .bindPopup('<strong>Bowery and Division Streets</strong><br>(Location not exact. Showing the current site of Confucius Plaza on the map.)' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19740531_Confucius+Plaza+Protest_Mary+Uyematsu+Kao.jpg" alt="a group of protesters holding signs and megaphones" onclick="zoomImage(this.src)"><figcaption>At Confucius Plaza, a group of protesters march against discriminatory hiring practices committed by the DeMatteis Corporation, which refused to hire Asian construction workers for a new high-rise affordable housing apartment complex in the heart of Chinatown. Basement Workshop\'s Kin Wah Chin holds a megaphone. May 31, 1974. Photo by Mary Uyematsu Kao.</figcaption></figure>');
 markers.push(b17);
 
 let eb1 = L.marker([40.71348705365983, -73.9979242175551], { title: "eb1" }).addTo(map2)
-    .bindPopup('<strong>1 East Broadway</strong><br>Michio Kaku’s loft, which was Basement Workshop’s Community Planning Workshop arm.'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FCPW%20May%201977.jpg?v=1633109928948" alt="a group photo" onclick="zoomImage(this.src)"><figcaption>Members of the Community Planning Workshop arm of the Basement Workshop pose for a group photo. 1977. Provided by Marina Yu; photo by Henry Kwong.</figcaption></figure>');
+    .bindPopup('<strong>1 East Broadway</strong><br>Michio Kaku\'s loft, which was Basement Workshop\'s Community Planning Workshop arm.'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/CPW_May_1977.jpg" alt="photo of a group of people sitting in front of a wall covered in some posters" onclick="zoomImage(this.src)"><figcaption>Members of the Community Planning Workshop arm of the Basement Workshop pose for a group photo. 1977. Provided by Marina Yu; photo by Henry Kwong.</figcaption></figure>');
 markers.push(eb1);
 
 let l199 = L.marker([40.721469061560114, -73.99781341755894], { title: "l199" }).addTo(map2)
     .bindPopup('<strong>199 Lafayette Street</strong><br>The new location that Basement Workshop expanded to in 1975.<br>' +
-        '<figure><iframe src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FBW%20Calendar%201976.pdf?v=1632815430707" frameborder="0" height="300px" width="auto"></iframe><figcaption>Artists at the Basement Workshop produce a 1976 calendar with original artwork showcasing examples of worker movements. 1975. MSS 292, Box 53, folder 3. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>'
-        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Dance_Flyer_for_Chin_Young_Legal_Fund_1976_page-0001.jpg" alt="black & white poster for a dance party" onclick="zoomImage(this.src)"><figcaption>A flyer for a dance party at Basement benefitting the legal fund for defending Basement members, Elizabeth Young and Kenny Chin, in their wrongful accusation of an assassination attempt and illegal search & seizure. November 1976. MSS 292, Box 1, folder 20. Courtesy of Fales Library and Special Collections, New York University. </figcaption></figure>'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FWe%20Wont%20Move%20Photo%20Exhibit%20Information%201977_page-0001.jpg?v=1632465930431" alt="a flyer with text describing information about a photo exhibit" onclick="zoomImage(this.src)"><figcaption>A flyer chronicling the joint collaboration between the Basement Workshop and San Francisco\'s Kearny Street Workshop in producing a photo exhibit examining the fight for the International Hotel in SF. December 15, 1977. MSS 292, Box 1, folder 20. Courtesy of Fales Library and Special Collections, New York University. </figcaption></figure>'
-        + '<figure><iframe src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FBasement%20Editions%20Ad%201978.pdf?v=1633113153781&embedded=true" frameborder="0" height="300px" width="auto"></iframe><figcaption>A mailer advertisement for purchasing poetry series publications from contemporary Asian American poets, Mei-mei Berssenbrugge, Lawson Fusao Inada, Jessica Hagedorn, and Ntozake Shange. Summer 1978. MSS 292, Box 1, folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FAmerican%20Born%20and%20Foreign%20Flyer%201979_page-0001.jpg?v=1633111820819" alt="a black & white flyer" onclick="zoomImage(this.src)"><figcaption>A flyer for the release party for Asian American poetry anthology, American Born and Foreign. May 19, 1979. MSS 292, Box 1, folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>');
+        '<figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/BW_Calendar_1976.pdf" frameborder="0" height="300px" width="auto" alt="scan of a black & white calendar for 1976, with hand-drawn illustrations about worker movements"></iframe><figcaption>Artists at the Basement Workshop produce a 1976 calendar with original artwork showcasing examples of worker movements. Silkscreen Calendar, 1975; Yoshio Kishi and Irene Yah-Ling Sun Collection; MSS.292, Box 53; Folder 3; Fales Library and Special Collections, New York University.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Dance_Flyer_for_Chin_Young_Legal_Fund_1976_page-0001.jpg" alt="black & white poster with illustration of a phoenix" onclick="zoomImage(this.src)"><figcaption>A flyer for a dance party at Basement benefitting the legal fund for defending Basement members, Elizabeth Young and Kenny Chin, who were wrongfully accused of an assassination attempt and having been victim to an illegal search & seizure. Flyer, November 1976; Yoshio Kishi and Irene Yah-Ling Sun Collection; MSS.292; Box 1; Folder 20; Fales Library and Special Collections, New York University.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/We_Wont_Move_Photo_Exhibit_Information_1977_page-0001.jpg" alt="a flyer with text describing information about a photo exhibit" onclick="zoomImage(this.src)"><figcaption>A flyer chronicling the joint collaboration between the Basement Workshop and San Francisco\'s Kearny Street Workshop in producing a photo exhibit detailing the fight for the International Hotel in San Francisco. Flyer, December 15, 1977; Yoshio Kishi and Irene Yah-Ling Sun Collection; MSS.292; Box 1; Folder 20; Fales Library and Special Collections, New York University.</figcaption></figure>'
+        + '<figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Basement_Editions_Ad_1978.pdf" alt="a mailer titled Basement Editions advertising the publication of a poetry series" frameborder="0" height="300px" width="auto"></iframe><figcaption>A mailer advertisement for purchasing poetry series publications from contemporary Asian American poets, Mei-mei Berssenbrugge, Lawson Fusao Inada, Jessica Hagedorn, and Ntozake Shange. Mailing Advertisement, Summer 1978; Yoshio Kishi and Irene Yah-Ling Sun Collection; MSS.292; Box 1; Folder 19; Fales Library and Special Collections, New York University.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/American_Born_and_Foreign_Flyer_1979_page-0001.jpg" alt="a black & white flyer with the title "American Born and Foreign"" onclick="zoomImage(this.src)"><figcaption>A flyer for the release party for Asian American poetry anthology, <i>American Born and Foreign</i>. Flyer, May 19, 1979. Yoshio Kishi and Irene Yah-Ling Sun Collection; MSS.292; Box 1, Folder 19; Fales Library and Special Collections, New York University.</figcaption></figure>');
 markers.push(l199);
 
 let b26 = L.marker([40.71513634882788, -73.99729058832119], { title: "b26" }).addTo(map3)
     .bindPopup('<strong>26 Bowery</strong><br>'
-        + '<figure><img src="assets/1986_AAAC_Sign.jpg" alt="a sign that says Asian American Arts Centre" onclick="zoomImage(this.src)"><figcaption>Bob Lee opens the Asian American Arts Centre (AAAC) in a 2,500 sq ft loft space operating as a dance studio art school, gallery, studio, and research area. Photo shot in 1986. From AAAC Flickr.</figcaption></figure>');
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/AAAC_Sign_walnut+copy.jpg" alt="a walnut sign that says Asian American Dance Theatre and Asian Arts Institute" onclick="zoomImage(this.src)"><figcaption>Eleanor Yung opens the Asian American Dance Theatre (AADT) in 1974 and moves into the third floor of 26 Bowery in 1976. In 1983, AADT included a visual arts program, calling it the Asian Arts Institute. A large full length walnut sign was created to mark its location. Courtesy of Asian American Arts Centre.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Elainefrontdoor1986.jpg" alt="a woman standing in front of a door with the signs 26, Asian American Dance Theatre, and Asian Arts Institute" onclick="zoomImage(this.src)"><figcaption>AADT\'s school administrator stands in front of the building on 26 Bowery. Courtesy of Asian American Arts Centre.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1986_AAAC+Sign.jpg" alt="a sign that says Asian American Arts Centre" onclick="zoomImage(this.src)"><figcaption>Later when McDonalds rented the ground and second floors of 26 Bowery, construction changed the facade of the building. AADT and the Asian Arts Institute name was then consolidated to the Asian American Arts Centre (AAAC). A new, smaller plexi sign was created to fit on the building\'s marble facade in 1987. In its 2,500 sq ft loft space, AAAC operated as a dance studio, a performance space, a regular art gallery with art discussions, a weekend art and dance school, and an office area. Courtesy of Asian American Arts Centre.</figcaption></figure>');
 markers.push(b26);
 
 let c22d = L.marker([40.713193857598824, -73.99733957337108], { title: "c22d" }).addTo(map3)
     .bindPopup('<strong>22 Catherine Street</strong><br>'
-        + '<figure><img src="assets/1976_TREE_Performance_Practice_from_Henry_Kwong.jpg" alt="two people in costumes, sitting" onclick="zoomImage(this.src)"><figcaption>Two members of TREE (The Rouge on the Elephant\'s Ear), a theatre group at Basement Workshop, prepare for a performance. Photo from Henry Kwong and Marina Yu.</figcaption></figure>');
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1976_TREE+Performance+Practice_from+Henry+Kwong.jpg" alt="two people in costumes, sitting" onclick="zoomImage(this.src)"><figcaption>Laura Moy and Jeff Jung, two members of TREE (The Rouge on the Elephant\'s Ear) Children\'s Street Theater, a theatre group at Basement Workshop, prepare for a performance called, \'I Met a Penguin.\' Courtesy of Henry Kwong and Marina Yu.</figcaption></figure>');
 markers.push(c22d);
 
 let b26a = L.marker([40.71513634882788, -73.99729058832119], { title: "b26a" }).addTo(map3)
     .bindPopup('<strong>26 Bowery</strong><br>'
-        + '<figure><img src="" alt="" onclick="zoomImage(this.src)"><figcaption>Flyer for a presentation by Basement Workshop\'s Bridge Magazine, hosted at the Asian American Dance Theater, located inside the Asian American Arts Centre. March 18, 1978. NYU Tamiment Archives - Boxes 1, 127, and 71.</figcaption></figure>');
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19780318_Bridge_Presentation+Flyer.jpeg" alt="a flyer with the Bridge Magazine Logo and invitation information for the presentation" onclick="zoomImage(this.src)"><figcaption>Flyer for a presentation by Basement Workshop\'s <i>Bridge Magazine</i> on Asian American arts and media, hosted at the Asian American Dance Theater. Flyer, March 18, 1978; Asian CineVision Records; TAM.416; Box 127; Tamiment Library/Robert F. Wagner Labor Archives, New York University.</figcaption></figure>');
 markers.push(b26a);
 
 let c22b = L.marker([40.713193857598824, -73.99733957337108], { title: "c22b" }).addTo(map3)
-    .bindPopup('<strong>22 Catherine Street</strong><br>Basement Workshop closed Lafayette St location in 1980 and returned solely to their second location.'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FBW%20Group%20Photo%201986.jpg?v=1633110644623" alt="a black & white group photo" onclick="zoomImage(this.src)"><figcaption>Members of the Basement Workshop pose for a group photo. 1986. Found in Basement Workshop 1986 yearbook.</figcaption></figure>');
+    .bindPopup('<strong>22 Catherine Street</strong><br>Basement Workshop closed Lafayette St. location in 1980 and returned solely to their second location.'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/BW_Group_Photo_1986.jpg" alt="a black & white group photo" onclick="zoomImage(this.src)"><figcaption>Members of the Basement Workshop pose for a group photo. 1986. Found in Basement Workshop 1986 yearbook.</figcaption></figure>');
 markers.push(c22b);
 
 let m70 = L.marker([40.71621651371639, -73.9990194733756], { title: "m70" }).addTo(map3)
@@ -276,12 +291,19 @@ markers.push(e176);
 
 let c22e = L.marker([40.713193857598824, -73.99733957337108], { title: "c22e" }).addTo(map4)
     .bindPopup('<strong>22 Catherine Street</strong><br>'
-        + '<figure><img src="assets/19820917_BW_Catherine_St_Artist_Project_Mailer.jpg" alt="a mail with exhibition information and list of artist names printed on it" onclick="zoomImage(this.src)"><figcaption>Basement Workshop\'s Catherine Street Artists Project coordinated by John Woo highlighted work by Asian and Asian American artists in their gallery space every month. This September 1982 exhibit showcased a group of 12 artists, some of whom had been involved from Basement\'s early days. From John Allen\'s personal files.</figcaption></figure>');
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19820917_BW+Catherine+St+Artist+Project+Mailer.jpg" alt="mail with exhibition information and list of artist names printed on it" onclick="zoomImage(this.src)"><figcaption>Basement Workshop\'s Catherine Street Artists Project coordinated by John Woo highlighted work by Asian and Asian American artists in their gallery space every month. This September 1982 exhibit showcased a group of 12 artists, some of whom had been involved from Basement\'s early days. September 1982. Courtesy of John Allen.</figcaption></figure>');
 markers.push(c22e);
+
+let c22h = L.marker([40.71301313680842, -73.9974052301965], { title: "c22h" }).addTo(map4)
+    .bindPopup('<strong>22 Catherine Street</strong><br>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1983_Peachfish+Set+Design+1.jpg" alt="photo of four performers in red or black and white, with pink cloth and set design including red geometrical forms" onclick="zoomImage(this.src)"><figcaption><i>Peachfish</i> was a collaborative performance piece written by Jessica Hagedorn with set design by Helen Oji, choreography and directing by Ching Valdes-Aran, and featuring acting by Laurie Carlos. February 1983. Courtesy of Helen Oji. Photo by Alan Kikuchi.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1983_Peachfish+Set+Design+2.jpg" alt="photo of the four performers sitting, standing, or lying down, interacting with each other" onclick="zoomImage(this.src)"><figcaption><i>Peachfish</i> was described as a "red performance piece" celebrating the interaction between artists using visual mediums, spoken text, and movement. February 1983. Courtesy of Helen Oji. Photo by Alan Kikuchi.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1983_Peachfish+Set+Design+Study.jpg" alt="a colored draft illustrating various set designs" onclick="zoomImage(this.src)"><figcaption>Helen Oji\'s set design studies for Peachfish. February 1983. Courtesy of Helen Oji.</figcaption></figure>')
+markers.push(c22h);
 
 let c22f = L.marker([40.71376170147968, -73.99728054266383], { title: "c22f" }).addTo(map4)
     .bindPopup('<strong>22 Catherine Street</strong><br>'
-        + '<figure><img src="assets/19850401_BW_Newsletter_Mailer_Page_1_from_John_Allen_Page_1.jpg" alt="a flyer detailing a list of events" onclick="zoomImage(this.src)"><figcaption>Basement Workshop\'s newsletter advertising a works-in-progress play reading, free poetry readings, a gallery exhibit, and performance poetry workshops. April 1985. From John Allen\'s personal files.</figcaption></figure>');
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19850401_BW+Newsletter+Mailer+Page+1_from+John+Allen_Page_1.jpg" alt="a flyer detailing a list of events" onclick="zoomImage(this.src)"><figcaption>Basement Workshop\'s newsletter advertising a works-in-progress play reading, free poetry readings, a gallery exhibit, and performance poetry workshops. April 1985. Courtesy of John Allen.</figcaption></figure>');
 markers.push(c22f);
 
 let wow = L.marker([40.715369107153165, -73.9988424613742], { title: "wow" }).addTo(map5)
@@ -289,20 +311,20 @@ let wow = L.marker([40.715369107153165, -73.9988424613742], { title: "wow" }).ad
 markers.push(wow);
 
 let g466 = L.marker([40.71602721207435, -73.98380221120885], { title: "g466" }).addTo(map3)
-    .bindPopup('<strong>466 Grand St</strong><br><figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FNeglected%20Past%20Program%201978_page-0001%20(1).jpg?v=1633113381733" alt="a black & white flyer" onclick="zoomImage(this.src)"><figcaption>A photo exhibit produced by the Basement Workshop\'s Asian American Resource Center (AARC) highlighting the work and culture of Chinese immigrants to the United States with aims to "counter historic racism. April 7, 1978. MSS 292, Box 1, Folder 19. Courtesy of Fales Library and Special Collections, New York University."</figcaption></figure>');
+    .bindPopup('<strong>466 Grand St</strong><br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Neglected_Past_Program_1978_page-0001.jpg" alt="a black & white flyer with illustrations" onclick="zoomImage(this.src)"><figcaption>A photo exhibit produced by the Basement Workshop\'s Asian American Resource Center (AARC) highlighting the work and culture of Chinese immigrants to the United States with aims to "counter historic racism. April 7, 1978. MSS 292, Box 1, Folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>');
 markers.push(g466);
 
 let henryst = L.marker([40.71343248127916, -73.98972896868358], { title: "henryst" }).addTo(map1)
-    .bindPopup('<strong>Henry St</strong><br><figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FCharlie%20Chin%20Playing%20Flute%201972.jpg?v=1633174517396" alt="image of a man playing the flute" onclick="zoomImage(this.src)"><figcaption>Charlie Chin plays the flute while people pass by during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>'
-        + '<figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FChildren%20at%20Henry%20St%20Fair%201972.jpg?v=1633174504885" alt="image of children drawing on the road with chalk" onclick="zoomImage(this.src)"><figcaption>Children draw with chalk on wide streets during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>');
+    .bindPopup('<strong>Henry St</strong><br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Charlie_Chin_Playing_Flute_1972.jpg" alt="photo of a man playing the flute in a busy street" onclick="zoomImage(this.src)"><figcaption>Charlie Chin plays the flute while people pass by during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Children_at_Henry_St_Fair_1972.jpg" alt="photo of children drawing on the road with chalk" onclick="zoomImage(this.src)"><figcaption>Children draw with chalk on wide streets during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>');
 markers.push(henryst);
 
 let hcst = L.marker([40.712815265364235, -73.99711496415289], { title: "hcst" }).addTo(map1)
-    .bindPopup('<strong>Intersection of Henry St. and Catherine St.</strong><br><figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FCharlie%20Chin%20and%20Chris%20Iijima%20Perform%201972.jpg?v=1633175004477" alt="image of three people performing live with guitar, mics, and drum set" onclick="zoomImage(this.src)"><figcaption>Charlie Chin and Chris Iijima perform live during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>');
+    .bindPopup('<strong>Intersection of Henry St. and Catherine St.</strong><br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Charlie_Chin_and_Chris_Iijima_Perform_1972.jpg" alt="photo of three people performing live with guitar, mics, and drum set" onclick="zoomImage(this.src)"><figcaption>Charlie Chin and Chris Iijima perform live during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>');
 markers.push(hcst);
 
 let lg566 = L.marker([40.73002089595453, -73.99775210238515], { title: "lg566" }).addTo(map1)
-    .bindPopup('<strong>566 Laguardia Place</strong><figure><img src="https://cdn.glitch.com/a5f0c00e-9553-4227-a327-3d110df5082e%2FMusic%20Benefit%20Flyer%20for%20Basement%20nd_page-0001.jpg?v=1633175051251" alt="a black & white flyer about a concert" onclick="zoomImage(this.src)"><figcaption>A flyer advertising a concert with performances by Charlie Chin and Chris Iijima, Warriors of the Rainbow, and the Morita Dance Company. Funds raised benefit children\'s programs at the Basement Workshop. No date. MSS 292, Box 1, Folder 20. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>');
+    .bindPopup('<strong>566 Laguardia Place</strong><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Music_Benefit_Flyer_for_Basement_nd_page-0001.jpg" alt="a black & white illustrated flyer about a concert" onclick="zoomImage(this.src)"><figcaption>A flyer advertising a concert with performances by Charlie Chin and Chris Iijima, Warriors of the Rainbow, and the Morita Dance Company. Funds raised benefit children\'s programs at the Basement Workshop. No date. MSS 292, Box 1, Folder 20. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>');
 markers.push(lg566);
 
 function markerFunction(id) {
@@ -542,3 +564,5 @@ function setScroll() {
     }
 
 };
+
+
