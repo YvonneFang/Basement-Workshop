@@ -15,22 +15,32 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
-
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <!-- CSS-->
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-    <div class="introduction">
-        <h1 style="line-height: 5rem !important;">Introduction</h1>
-        <p>This timeline map is an effort to showcase Basement Workshop's history from 1970 to 1985 and its legacy, in
-            rough chronological order, as well as in relation to the locations where key events happened. Basement
-            Workshop is an important Asian American political and arts organization, established during the Asian
-            American movement in the US. Its activities have impacted Asian American artists and activists around the
-            country. Clicking on the different time periods and events on this interactive map will take you on a
-            journey in New York's Chinatown and across the city in different historical moments, to explore the
-            extensive reach of Basement Workshop's activism.</p>
+    <button class="intro-btn" onclick="togglePopup()">?</button>
+    <div class="introduction" id="intro-popup">
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+
+        <h1>Introduction</h1>
+        <p>The Basement Mapping project is a scalable digital humanities project that geospatially visualizes the
+            narrative of the important community-based arts and social services activist organization through archives,
+            sites, and moments during the organizations history. The mapping project will be hosted on the Virtual Asian
+            American Art Museum site. It will also be shown as a part of the exhibition Imagining Justice: Asian
+            American Arts Movements organized by the Mori Art Museum from June 29-November 6, 2022. This exhibition
+            brings together objects including images, influential texts, and collaborative work that artists created
+            during the 1960s-the present time as well as projects and thoughts from those working on research and
+            scholarship on the movement, its history, and its continued legacy today into the future. The exhibition
+            looks at major hubs across the US, including San Francisco and Los Angeles, to Chicago, Philadelphia, and
+            the activities in New York City. The history as well as the documentation of the movements are the work many
+            networks of people and collaborations and we hope to underline these through the exhibition and this
+            collaborative project.</p>
     </div>
     <a id="language" href="#" onclick="switch_lang()">Japanese</a>
 
@@ -38,16 +48,16 @@
     <div class="map" id="mapid2"></div>
     <div class="map" id="mapid3"></div>
     <div class="map" id="mapid4"></div>
-    <div class="map" id="mapid5"></div>
+    <!-- <div class="map" id="mapid5"></div> -->
 
     <table>
-        <tr>
-            <td><button class="mapbtn" id="btn1">1970 - 1972</button></td>
-            <td><button class="mapbtn" id="btn2">1973 - 1975</button></td>
-            <td><button class="mapbtn" id="btn3">1976 - 1980</button></td>
-            <td><button class="mapbtn" id="btn4">1981 - 1985</button></td>
-            <td><button class="mapbtn" id="btn5">1986 - 2021</button></td>
-        </tr>
+        <div class="map-btn-container">
+            <button class="mapbtn" id="btn1">1970 - 1972</button>
+            <button class="mapbtn" id="btn2">1973 - 1975</button>
+            <button class="mapbtn" id="btn3">1976 - 1980</button>
+            <button class="mapbtn" id="btn4">1981 - 1985</button>
+            <!-- <td><button class="mapbtn" id="btn5">1986 - 2021</button></td> -->
+        </div>
     </table>
 
     <section class="timeline">
@@ -152,6 +162,12 @@
                 </div>
             </li>
             <li>
+                <div class="histEvent" id="b26b">
+                    <time>1978</time>
+                    <p class="exact-time"></p>Asian American Dance Theatre (AADT) as a teaching space<br>
+                </div>
+            </li>
+            <li>
                 <div class="histEvent" id="b26a">
                     <time>1978</time>
                     <p class="exact-time">March 18</p>A presentation by Basement Workshop's Bridge Magazine at Asian
@@ -204,14 +220,14 @@
             </li>
         </ol>
 
-        <ol id="t8621">
+        <!-- <ol id="t8621">
             <li id="first5">
                 <div class="histEvent" id="wow">
                     <time>2021 </time>
                     <p class="exact-time">August</p>The W.O.W. Project interview<br>
                 </div>
             </li>
-        </ol>
+        </ol> -->
 
         <div class="arrows">
             <button class="arrow arrow__prev disabled" disabled>
