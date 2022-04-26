@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Basement Workshop Timeline Map</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <!--<script src="https://d3js.org/d3.v7.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!--Leaflet libs-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <!-- CSS-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="introduction" style="color:red !important;">
+        <h1 style="line-height: 5rem !important;">Introduction</h1>
+        <p>This timeline map is an effort to showcase Basement Workshop's history from 1970 to 1985 and its legacy,
+            in
+            rough chronological order, as well as in relation to the locations where key events happened. Basement
+            Workshop is an important Asian American political and arts organization, established during the Asian
+            American movement in the US. Its activities have impacted Asian American artists and activists around
+            the
+            country. Clicking on the different time periods and events on this interactive map will take you on a
+            journey in New York's Chinatown and across the city in different historical moments, to explore the
+            extensive reach of Basement Workshop's activism.</p>
+    </div>
+    <a id="language" href="#" onclick="switch_lang()">English</a>
+
+    <div class="map" id="mapid1"></div>
+    <div class="map" id="mapid2"></div>
+    <div class="map" id="mapid3"></div>
+    <div class="map" id="mapid4"></div>
+    <div class="map" id="mapid5"></div>
+
+    <table>
+        <tr>
+            <td><button class="mapbtn" id="btn1" style="color:red !important;">1970 - 1972</button></td>
+            <td><button class="mapbtn" id="btn2" style="color:red !important;">1973 - 1975</button></td>
+            <td><button class="mapbtn" id="btn3" style="color:red !important;">1976 - 1980</button></td>
+            <td><button class="mapbtn" id="btn4" style="color:red !important;">1981 - 1985</button></td>
+            <td><button class="mapbtn" id="btn5" style="color:red !important;">1986 - 2021</button></td>
+        </tr>
+    </table>
+
+    <section class="timeline">
+        <ol id="t7072">
+            <li id="first1">
+                <div class="histEvent" id="columbia" style="color:red !important;">
+                    <time>1970</time>
+                    <span class="exact-time"></span>Danny Yung publishes the <i>Chinatown Report</i><br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="e54" style="color:red !important;">
+                    <time>1970</time>
+                    <p class="exact-time">Spring</p>Basement Workshop opens their first location<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="a613" style="color:red !important;">
+                    <!--     need to set conditions for this manually       -->
+                    <time>Appx. 1970/1971</time>
+                    <p class="exact-time"></p>Chickens Come Home to Roost storefront, a community gathering and
+                    performance space<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="rockefeller" style="color:red !important;">
+                    <time>1971</time>
+                    <p class="exact-time"></p>"New York: The Chinese Way," Basement Workshop's campaign to promote
+                    tourism to Chinatown<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="e54b" style="color:red !important;">
+                    <time>1971</time>
+                    <p class="exact-time"></p>Travel guide brochure for "New York: The Chinese Way"<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="c22a" style="color:red !important;">
+                    <time>1972</time>
+                    <p class="exact-time">September</p>Basement Workshop opens new location on 3rd floor of building<br>
+                </div>
+            </li>
+            <li id="last1">
+                <div class="histEvent" id="c22c" style="color:red !important;">
+                    <time>1972</time>
+                    <p class="exact-time">October 1</p>Brochure for Basement Workshop's Bridge Magazine<br>
+                </div>
+            </li>
+        </ol>
+
+        <ol id="t7375">
+            <li id="first2">
+                <div class="histEvent" id="eb32">
+                    <time>1973</time> Danny Yung’s Loft / Asian Cine-Vision<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="eb33">
+                    <time>1974</time>
+                    <p class="exact-time"></p>First performances at Asian American Dance Theatre<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="b17">
+                    <time>1974</time>
+                    <p class="exact-time">May</p>Basement Workshop and other community groups protest Confucius Plaza
+                    development<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="eb1">
+                    <time>1974</time>Basement Workshop’s Community Planning Workshop arm / Michio Kaku’s loft<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="l199">
+                    <time>1975</time>
+                    <p class="exact-time"></p>Basement Workshop expands to new location (Keeps 22 Catherine Street for
+                    English classes and other programs)<br>
+                </div>
+            </li>
+            <li id="last2">
+                <div class="histEvent" id="c22g">
+                    <time>1975</time>
+                    <p class="exact-time"></p>Children's Arts and Crafts Workshop<br>
+                </div>
+            </li>
+        </ol>
+
+        <ol id="t7680">
+            <li id="first3">
+                <div class="histEvent" id="b26">
+                    <time>1976</time>
+                    <p class="exact-time"></p>Bob Lee opens the Asian American Arts Centre<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="c22d">
+                    <time>1976</time>
+                    <p class="exact-time"></p>Theatre group at Basement Worshop<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="b26a">
+                    <time>1978</time>
+                    <p class="exact-time">March 18</p>A presentation by Basement Workshop's Bridge Magazine at Asian
+                    American Dance Theater<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="c22b">
+                    <time>1980</time>
+                    <p class="exact-time"></p>Basement Workshop Closes Lafayette and Returns Solely to 2nd
+                    Location<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="m70">
+                    <time>1980</time>
+                    <p class="exact-time"></p>NY Chinatown History Project (Formerly BW, Eventually MOCA)
+                    <br>
+                </div>
+            </li>
+            <li id="last3">
+                <div class="histEvent" id="e176">
+                    <time>1980</time>
+                    <p class="exact-time"></p>Asian Americans for Equality offices<br>
+                </div>
+            </li>
+        </ol>
+
+        <ol id="t8185">
+            <li id="first4">
+                <div class="histEvent" id="c22e">
+                    <time>1982</time>
+                    <p class="exact-time">September</p>An exhibition by Basement Workshop's Catherine Street Artists
+                    Project showcasing works from 12 artists<br>
+                </div>
+            </li>
+            <li id="last4">
+                <div class="histEvent" id="c22f">
+                    <time>1985</time>
+                    <p class="exact-time">April</p>Play and poetry readings, exhibits, and workshops at Basement
+                    Workshop<br>
+                </div>
+            </li>
+        </ol>
+
+        <ol id="t8621">
+            <li id="first5">
+                <div class="histEvent" id="wow">
+                    <time>2021 </time>
+                    <p class="exact-time">August</p>The W.O.W. Project interview<br>
+                </div>
+            </li>
+        </ol>
+
+        <div class="arrows">
+            <button class="arrow arrow__prev disabled" disabled>
+                <img src="https://cdn.glitch.global/a5f0c00e-9553-4227-a327-3d110df5082e/prev.png?v=1644513361831"
+                    alt="prev timeline arrow">
+            </button>
+            <button class="arrow arrow__next">
+                <img src="https://cdn.glitch.global/a5f0c00e-9553-4227-a327-3d110df5082e/next.png?v=1644513350841"
+                    alt="next timeline arrow">
+            </button>
+        </div>
+    </section>
+    <!--Placing script at the bottom so map div will render before map object is initiated-->
+    <script src="app.js"></script>
+</body>
+
+</html>
