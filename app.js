@@ -84,13 +84,13 @@ mapButton1.addEventListener('click', () => {
     mapDiv2.style.display = 'none';
     mapDiv3.style.display = 'none';
     mapDiv4.style.display = 'none';
-    mapDiv5.style.display = 'none';
+    // mapDiv5.style.display = 'none';
     map1.invalidateSize();
     TL1.style.display = 'block';
     TL2.style.display = 'none';
     TL3.style.display = 'none';
     TL4.style.display = 'none';
-    TL5.style.display = 'none';
+    // TL5.style.display = 'none';
 
 });
 
@@ -99,13 +99,13 @@ mapButton2.addEventListener('click', () => {
     mapDiv2.style.display = 'block';
     mapDiv3.style.display = 'none';
     mapDiv4.style.display = 'none';
-    mapDiv5.style.display = 'none';
+    // mapDiv5.style.display = 'none';
     map2.invalidateSize();
     TL1.style.display = 'none';
     TL2.style.display = 'block';
     TL3.style.display = 'none';
     TL4.style.display = 'none';
-    TL5.style.display = 'none';
+    // TL5.style.display = 'none';
 });
 
 mapButton3.addEventListener('click', () => {
@@ -113,13 +113,13 @@ mapButton3.addEventListener('click', () => {
     mapDiv2.style.display = 'none';
     mapDiv3.style.display = 'block';
     mapDiv4.style.display = 'none';
-    mapDiv5.style.display = 'none';
+    // mapDiv5.style.display = 'none';
     map3.invalidateSize();
     TL1.style.display = 'none';
     TL2.style.display = 'none';
     TL3.style.display = 'block';
     TL4.style.display = 'none';
-    TL5.style.display = 'none';
+    // TL5.style.display = 'none';
 });
 
 mapButton4.addEventListener('click', () => {
@@ -127,13 +127,13 @@ mapButton4.addEventListener('click', () => {
     mapDiv2.style.display = 'none';
     mapDiv3.style.display = 'none';
     mapDiv4.style.display = 'block';
-    mapDiv5.style.display = 'none';
+    // mapDiv5.style.display = 'none';
     map4.invalidateSize();
     TL1.style.display = 'none';
     TL2.style.display = 'none';
     TL3.style.display = 'none';
     TL4.style.display = 'block';
-    TL5.style.display = 'none';
+    // TL5.style.display = 'none';
 });
 
 // mapButton5.addEventListener('click', () => {
