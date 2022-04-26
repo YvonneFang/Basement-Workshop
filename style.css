@@ -1,15 +1,62 @@
 .introduction {
-  z-index: 1000;
+  z-index: 10000;
   background-color: rgba(33, 26, 56, 0.8);
   position: absolute;
   color: white;
   max-width: 40%;
-  padding: 30px 100px;
   left: -1%;
-  top: -1%;
-  height: 60vh;
+  height: 65vh;
+  display: none;
+}
+
+.introduction.active {
+  display: block;
+}
+
+.introduction h1 {
+  margin-top: 5vh;
   text-align: center;
-  line-height: 2rem;
+}
+
+.introduction p {
+  margin: 0 3vw 0 4vw;
+  font-size: 0.9vw;
+  text-align: left;
+  line-height: 3vh;
+}
+
+.close-btn {
+  position: absolute;
+  right: 1vw;
+  top: 1vh;
+  font-size: 4vh;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: grey;
+
+}
+
+.intro-btn {
+  border-radius: 50px;
+  position: absolute;
+  bottom: 35vh;
+  color: white;
+  left: 2vw;
+  z-index: 10000;
+  background-color: rgba(33, 26, 56, 0.9);
+  border: #ffffff;
+  border-style: solid;
+  width: 3vw;
+  height: 3vw;
+  font-size: 1.5vw;
+}
+
+.intro-btn:hover {
+  background-color: grey;
 }
 
 #language {
@@ -19,9 +66,8 @@
   color: white;
   padding: 5px 20px;
   border-radius: 5px;
-  top: 5%;
-  right: 0;
-  margin-right: 30px;
+  top: 3vh;
+  right: 2vw;
   border-color: white;
   text-decoration: none;
 }
@@ -49,19 +95,21 @@ ol {
   display: block;
 }
 
-table {
+.map-btn-container {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
   text-align: center;
 }
 
-td button {
+.map-btn-container button {
   font: bold 16px "Helvetica Neue", sans-serif;
   background-color: #A5907E;
   padding: 8px;
   border-radius: 5px;
 }
 
-td button:hover {
+.map-btn-container button:hover {
   background-color: #0E0004;
   color: white;
 }
