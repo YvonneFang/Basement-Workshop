@@ -50,29 +50,34 @@ function switch_lang() {
     }
 }
 
+function togglePopup() {
+
+    document.getElementById("intro-popup").classList.toggle("active");
+}
+
 let map1 = L.map('mapid1').setView([40.78348090367126, -73.9695765463863], 12);//need to tweak the zoom
 let map2 = L.map('mapid2').setView([40.71952149071173, -73.99906679108679], 15);
 let map3 = L.map('mapid3').setView([40.71839931388107, -73.99358322467984], 15);
 let map4 = L.map('mapid4').setView([40.712, -74.006], 13);
-let map5 = L.map('mapid5').setView([40.715369107153165, -73.9988424613742], 15);
+// let map5 = L.map('mapid5').setView([40.715369107153165, -73.9988424613742], 15);
 
 let mapButton1 = document.getElementById('btn1');
 let mapButton2 = document.getElementById('btn2');
 let mapButton3 = document.getElementById('btn3');
 let mapButton4 = document.getElementById('btn4');
-let mapButton5 = document.getElementById('btn5');
+// let mapButton5 = document.getElementById('btn5');
 
 let mapDiv1 = document.getElementById('mapid1');
 let mapDiv2 = document.getElementById('mapid2');
 let mapDiv3 = document.getElementById('mapid3');
 let mapDiv4 = document.getElementById('mapid4');
-let mapDiv5 = document.getElementById('mapid5');
+// let mapDiv5 = document.getElementById('mapid5');
 
 let TL1 = document.getElementById('t7072');
 let TL2 = document.getElementById('t7375');
 let TL3 = document.getElementById('t7680');
 let TL4 = document.getElementById('t8185');
-let TL5 = document.getElementById('t8621');
+// let TL5 = document.getElementById('t8621');
 
 mapButton1.addEventListener('click', () => {
     mapDiv1.style.display = 'block';
@@ -131,19 +136,19 @@ mapButton4.addEventListener('click', () => {
     TL5.style.display = 'none';
 });
 
-mapButton5.addEventListener('click', () => {
-    mapDiv1.style.display = 'none';
-    mapDiv2.style.display = 'none';
-    mapDiv3.style.display = 'none';
-    mapDiv4.style.display = 'none';
-    mapDiv5.style.display = 'block';
-    map5.invalidateSize();
-    TL1.style.display = 'none';
-    TL2.style.display = 'none';
-    TL3.style.display = 'none';
-    TL4.style.display = 'none';
-    TL5.style.display = 'block';
-});
+// mapButton5.addEventListener('click', () => {
+//     mapDiv1.style.display = 'none';
+//     mapDiv2.style.display = 'none';
+//     mapDiv3.style.display = 'none';
+//     mapDiv4.style.display = 'none';
+//     mapDiv5.style.display = 'block';
+//     map5.invalidateSize();
+//     TL1.style.display = 'none';
+//     TL2.style.display = 'none';
+//     TL3.style.display = 'none';
+//     TL4.style.display = 'none';
+//     TL5.style.display = 'block';
+// });
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoieWZhbmcwMjIiLCJhIjoiY2tyemEwaWViMDEzdTJ1bXprODN1OWQxZiJ9.n05fD1xyssZjDb0YH1wobQ', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -181,14 +186,14 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'your.mapbox.access.token'
 }).addTo(map4);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoieWZhbmcwMjIiLCJhIjoiY2tyemEwaWViMDEzdTJ1bXprODN1OWQxZiJ9.n05fD1xyssZjDb0YH1wobQ', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(map5);
+// L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoieWZhbmcwMjIiLCJhIjoiY2tyemEwaWViMDEzdTJ1bXprODN1OWQxZiJ9.n05fD1xyssZjDb0YH1wobQ', {
+//     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+//     maxZoom: 18,
+//     id: 'mapbox/streets-v11',
+//     tileSize: 512,
+//     zoomOffset: -1,
+//     accessToken: 'your.mapbox.access.token'
+// }).addTo(map5);
 
 //TODO - custom pins color scheme consistent
 //TODO - when clicking on timeline, bubbles pop up automatically
@@ -201,7 +206,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 let markers = [];
 
 let columbia = L.marker([40.80805168110775, -73.96308628414795], { title: "columbia" }).addTo(map1)
-    .bindPopup('<strong>Columbia Graduate School</strong><br><figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Chinatown_Report_1969_Danny_Yung_1970.pdf&embedded=true" alt="the scan of the full "Chinatown Report"" frameborder="0" height="300px" width="auto"></iframe><figcaption>Under the guidance of Danny Yung and colleagues from Columbia University\'s Urban Center, the Chinatown Study Group was formed in 1969. The group set out to survey the needs of Chinatown residents. In 1970, the results of this preliminary study was published and fostered the generation of what would soon be known as the Basement Workshop. 1970. From Bob Lee and Eleanor Yung.</figcaption></figure>', { maxWidth: 800 });
+    .bindPopup('<strong>Columbia Graduate School</strong><br>' + '<figure><iframe src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Chinatown_Report_1969_Danny_Yung_1970.pdf" alt="the scan of the full "Chinatown Report"" frameborder="0" height="300px" width="auto"></iframe><figcaption>Under the guidance of Danny Yung and colleagues from Columbia University\'s Urban Center, the Chinatown Study Group was formed in 1969. The group set out to survey the needs of Chinatown residents. In 1970, the results of this preliminary study was published and fostered the generation of what would soon be known as the Basement Workshop. 1970. From Bob Lee and Eleanor Yung.</figcaption></figure>');
 markers.push(columbia);
 
 let e54 = L.marker([40.717373115072476, -73.99638905974999], { title: "e54" }).addTo(map1)
@@ -232,6 +237,13 @@ markers.push(rockefeller);
 let e54b = L.marker([40.71724768682543, -73.9964573754843], { title: "e54b" }).addTo(map1)
     .bindPopup('<strong>54 Elizabeth Street</strong><br>' + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1971_BW+New+York+Chinese+Way+Brochure+Page+1_NYU+Tamiment.jpeg" alt="a cover page with lion dance imagery and the text "New York: the Chinese Way"" onclick="zoomImage(this.src)"><figcaption>Front cover of the travel guide brochure, "New York: The Chinese Way," a project to "inform New Yorkers about Chinese eating, our festivals, our operas, our social issues..." New York: The Chinese Way Brochure, 1971; Asian American Arts Centre Records; TAM.613; Box 1; Tamiment Library/ Robert F. Wagner Labor Archives, New York University.</figcaption></figure>');
 markers.push(e54b);
+
+// Adding marker cluster for E54
+let markers_e54 = new L.MarkerClusterGroup();
+markers_e54.addLayer(e54);
+markers_e54.addLayer(e54b);
+
+map1.addLayer(markers_e54);
 
 let eb32 = L.marker([40.71394508120349, -73.99650475988331], { title: "eb32" }).addTo(map2)
     .bindPopup('<strong>32 East Broadway</strong><br>Danny Yung\'s loft, which became Asian Cine-Vision, an organization that showcases and preserves films created by or feature peoples of Asian descent.');
@@ -271,7 +283,13 @@ let c22d = L.marker([40.713193857598824, -73.99733957337108], { title: "c22d" })
         + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1976_TREE+Performance+Practice_from+Henry+Kwong.jpg" alt="two people in costumes, sitting" onclick="zoomImage(this.src)"><figcaption>Laura Moy and Jeff Jung, two members of TREE (The Rouge on the Elephant\'s Ear) Children\'s Street Theater, a theatre group at Basement Workshop, prepare for a performance called, \'I Met a Penguin.\' Courtesy of Henry Kwong and Marina Yu.</figcaption></figure>');
 markers.push(c22d);
 
-let b26a = L.marker([40.71513634882788, -73.99729058832119], { title: "b26a" }).addTo(map3)
+let b26b = L.marker([40.714988497073406, -73.99727798181733], { title: "b26b" }).addTo(map3)
+    .bindPopup('<strong>26 Bowery</strong><br>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/AADTchilddanceclasses.jpg" alt="a group of children dancing in a room with wooden floor" onclick="zoomImage(this.src)"></figure>'
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/AADTdanceclasses++copy.jpg" alt="a group of adults dancing in a room with wooden floor" onclick="zoomImage(this.src)"><figcaption>The Asian American Dance Theatre hosted creative dance classes for adults and children alike. Classes included ballet for children and traditional Asian dance. AADT operated as both a performance and teaching space. Courtesy of Asian American Arts Centre.</figcaption></figure>');
+markers.push(b26b)
+
+let b26a = L.marker([40.71491784969209, -73.99716398793852], { title: "b26a" }).addTo(map3)
     .bindPopup('<strong>26 Bowery</strong><br>'
         + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19780318_Bridge_Presentation+Flyer.jpeg" alt="a flyer with the Bridge Magazine Logo and invitation information for the presentation" onclick="zoomImage(this.src)"><figcaption>Flyer for a presentation by Basement Workshop\'s <i>Bridge Magazine</i> on Asian American arts and media, hosted at the Asian American Dance Theater. Flyer, March 18, 1978; Asian CineVision Records; TAM.416; Box 127; Tamiment Library/Robert F. Wagner Labor Archives, New York University.</figcaption></figure>');
 markers.push(b26a);
@@ -295,9 +313,7 @@ let c22e = L.marker([40.713193857598824, -73.99733957337108], { title: "c22e" })
 markers.push(c22e);
 
 let c22h = L.marker([40.71301313680842, -73.9974052301965], { title: "c22h" }).addTo(map4)
-    .bindPopup('<strong>22 Catherine Street</strong><br>'
-        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1983_Peachfish+Set+Design+1.jpg" alt="photo of four performers in red or black and white, with pink cloth and set design including red geometrical forms" onclick="zoomImage(this.src)"><figcaption><i>Peachfish</i> was a collaborative performance piece written by Jessica Hagedorn with set design by Helen Oji, choreography and directing by Ching Valdes-Aran, and featuring acting by Laurie Carlos. February 1983. Courtesy of Helen Oji. Photo by Alan Kikuchi.</figcaption></figure>'
-        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1983_Peachfish+Set+Design+2.jpg" alt="photo of the four performers sitting, standing, or lying down, interacting with each other" onclick="zoomImage(this.src)"><figcaption><i>Peachfish</i> was described as a "red performance piece" celebrating the interaction between artists using visual mediums, spoken text, and movement. February 1983. Courtesy of Helen Oji. Photo by Alan Kikuchi.</figcaption></figure>'
+    .bindPopup('<strong>22 Catherine Street</strong><br>Basement Workshop\'s space also served as a space for artists to perform original pieces. In February 1983, "Peachfish," a collaborative performance piece, opened to the public. Written by Jessica Hagedorn with set design by Helen Oji, choreography and directing by Ching Valdes-Aran, and featuring acting by Laurie Carlos, "Peachfish" celebrated the interaction between artists using visual mediums, spoken text, and movement.'
         + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1983_Peachfish+Set+Design+Study.jpg" alt="a colored draft illustrating various set designs" onclick="zoomImage(this.src)"><figcaption>Helen Oji\'s set design studies for Peachfish. February 1983. Courtesy of Helen Oji.</figcaption></figure>')
 markers.push(c22h);
 
@@ -306,26 +322,9 @@ let c22f = L.marker([40.71376170147968, -73.99728054266383], { title: "c22f" }).
         + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/19850401_BW+Newsletter+Mailer+Page+1_from+John+Allen_Page_1.jpg" alt="a flyer detailing a list of events" onclick="zoomImage(this.src)"><figcaption>Basement Workshop\'s newsletter advertising a works-in-progress play reading, free poetry readings, a gallery exhibit, and performance poetry workshops. April 1985. Courtesy of John Allen.</figcaption></figure>');
 markers.push(c22f);
 
-let wow = L.marker([40.715369107153165, -73.9988424613742], { title: "wow" }).addTo(map5)
-    .bindPopup('<strong>26 Mott St</strong><br><br>Wing On Wo & Co, the location of the W.O.W. Project.<br><iframe width="560" height="315" src="https://www.youtube.com/embed/i8TJ7RgimNM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-markers.push(wow);
-
-let g466 = L.marker([40.71602721207435, -73.98380221120885], { title: "g466" }).addTo(map3)
-    .bindPopup('<strong>466 Grand St</strong><br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Neglected_Past_Program_1978_page-0001.jpg" alt="a black & white flyer with illustrations" onclick="zoomImage(this.src)"><figcaption>A photo exhibit produced by the Basement Workshop\'s Asian American Resource Center (AARC) highlighting the work and culture of Chinese immigrants to the United States with aims to "counter historic racism. April 7, 1978. MSS 292, Box 1, Folder 19. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>');
-markers.push(g466);
-
-let henryst = L.marker([40.71343248127916, -73.98972896868358], { title: "henryst" }).addTo(map1)
-    .bindPopup('<strong>Henry St</strong><br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Charlie_Chin_Playing_Flute_1972.jpg" alt="photo of a man playing the flute in a busy street" onclick="zoomImage(this.src)"><figcaption>Charlie Chin plays the flute while people pass by during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>'
-        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Children_at_Henry_St_Fair_1972.jpg" alt="photo of children drawing on the road with chalk" onclick="zoomImage(this.src)"><figcaption>Children draw with chalk on wide streets during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>');
-markers.push(henryst);
-
-let hcst = L.marker([40.712815265364235, -73.99711496415289], { title: "hcst" }).addTo(map1)
-    .bindPopup('<strong>Intersection of Henry St. and Catherine St.</strong><br><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Charlie_Chin_and_Chris_Iijima_Perform_1972.jpg" alt="photo of three people performing live with guitar, mics, and drum set" onclick="zoomImage(this.src)"><figcaption>Charlie Chin and Chris Iijima perform live during the Henry Street Fair. 1972. NYU A/P/A Collection; photos by Henry Chu.</figcaption></figure>');
-markers.push(hcst);
-
-let lg566 = L.marker([40.73002089595453, -73.99775210238515], { title: "lg566" }).addTo(map1)
-    .bindPopup('<strong>566 Laguardia Place</strong><figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/Music_Benefit_Flyer_for_Basement_nd_page-0001.jpg" alt="a black & white illustrated flyer about a concert" onclick="zoomImage(this.src)"><figcaption>A flyer advertising a concert with performances by Charlie Chin and Chris Iijima, Warriors of the Rainbow, and the Morita Dance Company. Funds raised benefit children\'s programs at the Basement Workshop. No date. MSS 292, Box 1, Folder 20. Courtesy of Fales Library and Special Collections, New York University.</figcaption></figure>');
-markers.push(lg566);
+// let wow = L.marker([40.715369107153165, -73.9988424613742], { title: "wow" }).addTo(map5)
+//     .bindPopup('<strong>26 Mott St</strong><br><br>Wing On Wo & Co, the location of the W.O.W. Project.<br><iframe width="560" height="315" src="https://www.youtube.com/embed/i8TJ7RgimNM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+// markers.push(wow);
 
 function markerFunction(id) {
     for (var i in markers) {
