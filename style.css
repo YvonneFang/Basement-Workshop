@@ -127,6 +127,29 @@ body {
   color: #fff;
 }
 
+.marker-cluster-small {
+  background-color: rgba(114, 17, 33, 0.6) !important;
+}
+
+.marker-cluster-small div {
+  background-color: rgba(114, 17, 33, 0.6) !important;
+}
+
+.marker-cluster-medium {
+  background-color: rgba(114, 17, 33, 0.6) !important;
+}
+
+.marker-cluster-medium div {
+  background-color: rgba(114, 17, 33, 0.6) !important;
+}
+
+.marker-cluster-large {
+  background-color: rgba(114, 17, 33, 0.6) !important;
+}
+
+.marker-cluster-large div {
+  background-color: rgba(114, 17, 33, 0.6) !important;
+}
 
 /* .section SECTION
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -224,6 +247,10 @@ body {
   border-radius: 5px 5px 5px 0;
 }
 
+.jp ol li div {
+  font-size: 13px !important;
+}
+
 .timeline ol li div::before {
   content: '';
   position: absolute;
@@ -314,8 +341,8 @@ body {
   filter: brightness(70%) !important;
 }
 
-/* .histEvent{
-   !important;
+/* .histEvent {
+  overflow: scroll;
 } */
 
 .selected {
