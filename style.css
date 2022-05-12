@@ -249,6 +249,7 @@ body {
 
 .jp ol li div {
   font-size: 13px !important;
+  line-height: 18px !important;
 }
 
 .timeline ol li div::before {
