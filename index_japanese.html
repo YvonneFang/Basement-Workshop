@@ -15,24 +15,22 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
-
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <!-- CSS-->
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-    <div class="introduction" style="color:red !important;">
-        <h1 style="line-height: 5rem !important;">Introduction</h1>
-        <p>This timeline map is an effort to showcase Basement Workshop's history from 1970 to 1985 and its legacy,
-            in
-            rough chronological order, as well as in relation to the locations where key events happened. Basement
-            Workshop is an important Asian American political and arts organization, established during the Asian
-            American movement in the US. Its activities have impacted Asian American artists and activists around
-            the
-            country. Clicking on the different time periods and events on this interactive map will take you on a
-            journey in New York's Chinatown and across the city in different historical moments, to explore the
-            extensive reach of Basement Workshop's activism.</p>
+    <button class="intro-btn" onclick="togglePopup()">?</button>
+    <div class="introduction active" id="intro-popup">
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+
+        <h1>はじめに</h1>
+        <p>この地図年表は、1970年から1985年まで活動したベースメント・ワークショップの歴史とその遺産を、大まかな年代順に、重要な出来事が起こった場所と関連付けて紹介するものです。ベースメント・ワークショップは、米国におけるアジア系アメリカ人運動の中で設立された、極めて重要なアジア系アメリカ人の政治・芸術団体です。その活動は、全米のアジア系アメリカ人のアーティストや活動家に影響を与えてきました。このインタラクティブ・マップに表示された年代や出来事をクリックすると、さまざまな歴史的瞬間におけるニューヨークのチャイナタウン、そして街中を周遊し、ベースメント・ワークショップの広範囲に及ぶアクティビズムを探索することができます。
+        </p>
     </div>
     <a id="language" href="#" onclick="switch_lang()">English</a>
 
@@ -40,63 +38,61 @@
     <div class="map" id="mapid2"></div>
     <div class="map" id="mapid3"></div>
     <div class="map" id="mapid4"></div>
-    <div class="map" id="mapid5"></div>
+    <!-- <div class="map" id="mapid5"></div> -->
 
     <table>
-        <tr>
-            <td><button class="mapbtn" id="btn1" style="color:red !important;">1970 - 1972</button></td>
-            <td><button class="mapbtn" id="btn2" style="color:red !important;">1973 - 1975</button></td>
-            <td><button class="mapbtn" id="btn3" style="color:red !important;">1976 - 1980</button></td>
-            <td><button class="mapbtn" id="btn4" style="color:red !important;">1981 - 1985</button></td>
-            <td><button class="mapbtn" id="btn5" style="color:red !important;">1986 - 2021</button></td>
-        </tr>
+        <div class="map-btn-container">
+            <button class="mapbtn" id="btn1">1970 - 1972</button>
+            <button class="mapbtn" id="btn2">1973 - 1975</button>
+            <button class="mapbtn" id="btn3">1976 - 1980</button>
+            <button class="mapbtn" id="btn4">1981 - 1985</button>
+            <!-- <td><button class="mapbtn" id="btn5">1986 - 2021</button></td> -->
+        </div>
     </table>
 
-    <section class="timeline">
+    <section class="timeline jp">
         <ol id="t7072">
             <li id="first1">
-                <div class="histEvent" id="columbia" style="color:red !important;">
-                    <time>1970</time>
-                    <span class="exact-time"></span>Danny Yung publishes the <i>Chinatown Report</i><br>
+                <div class="histEvent" id="columbia">
+                    <time>1970年</time>
+                    <span class="exact-time"></span>ダニー・ユンが『チャイナタウン・レポート』を発行<br>
                 </div>
             </li>
             <li>
-                <div class="histEvent" id="e54" style="color:red !important;">
-                    <time>1970</time>
-                    <p class="exact-time">Spring</p>Basement Workshop opens their first location<br>
+                <div class="histEvent" id="e54">
+                    <time>1970年</time>
+                    <p class="exact-time">春</p>ベースメント・ワークショップの初の拠点がオープン<br>
                 </div>
             </li>
             <li>
-                <div class="histEvent" id="a613" style="color:red !important;">
+                <div class="histEvent" id="a613">
                     <!--     need to set conditions for this manually       -->
-                    <time>Appx. 1970/1971</time>
-                    <p class="exact-time"></p>Chickens Come Home to Roost storefront, a community gathering and
-                    performance space<br>
+                    <time>1970/1971年頃</time>
+                    <p class="exact-time"></p>コミュニティ集会とパフォーマンスのためのスペース「チキンズ・カム・ホーム・トゥ・ルースト・ストアフロント」。<br>
                 </div>
             </li>
             <li>
-                <div class="histEvent" id="rockefeller" style="color:red !important;">
-                    <time>1971</time>
-                    <p class="exact-time"></p>"New York: The Chinese Way," Basement Workshop's campaign to promote
-                    tourism to Chinatown<br>
+                <div class="histEvent" id="rockefeller">
+                    <time>1971年</time>
+                    <p class="exact-time"></p>ベースメント・ワークショップのチャイナタウン観光促進キャンペーン「ニューヨーク：ザ・チャイニーズ・ウェイ」<br>
                 </div>
             </li>
             <li>
-                <div class="histEvent" id="e54b" style="color:red !important;">
-                    <time>1971</time>
-                    <p class="exact-time"></p>Travel guide brochure for "New York: The Chinese Way"<br>
+                <div class="histEvent" id="e54b">
+                    <time>1971年</time>
+                    <p class="exact-time"></p>「ニューヨーク：ザ・チャイニーズ・ウェイ」のための旅行案内パンフレット<br>
                 </div>
             </li>
             <li>
-                <div class="histEvent" id="c22a" style="color:red !important;">
-                    <time>1972</time>
-                    <p class="exact-time">September</p>Basement Workshop opens new location on 3rd floor of building<br>
+                <div class="histEvent" id="c22a">
+                    <time>1972年</time>
+                    <p class="exact-time">9月</p>ベースメント・ワークショップ、ビルの3階に新拠点を開設<br>
                 </div>
             </li>
             <li id="last1">
-                <div class="histEvent" id="c22c" style="color:red !important;">
-                    <time>1972</time>
-                    <p class="exact-time">October 1</p>Brochure for Basement Workshop's Bridge Magazine<br>
+                <div class="histEvent" id="c22c">
+                    <time>1972年</time>
+                    <p class="exact-time">10月1日</p>ベースメント・ワークショップが刊行する『ブリッジマガジン』のパンフレット<br>
                 </div>
             </li>
         </ol>
@@ -104,38 +100,36 @@
         <ol id="t7375">
             <li id="first2">
                 <div class="histEvent" id="eb32">
-                    <time>1973</time> Danny Yung’s Loft / Asian Cine-Vision<br>
+                    <time>1973年</time>ダニー・ユンのロフト / アジアン・シネビジョン<br>
                 </div>
             </li>
             <li>
                 <div class="histEvent" id="eb33">
-                    <time>1974</time>
-                    <p class="exact-time"></p>First performances at Asian American Dance Theatre<br>
+                    <time>1974年</time>
+                    <p class="exact-time"></p>アジアン・アメリカン・ダンス・シアター初公演<br>
                 </div>
             </li>
             <li>
                 <div class="histEvent" id="b17">
-                    <time>1974</time>
-                    <p class="exact-time">May</p>Basement Workshop and other community groups protest Confucius Plaza
-                    development<br>
+                    <time>1974年</time>
+                    <p class="exact-time">5月</p>ベースメント・ワークショップほか、コミュニティ団体が孔子プラザの開発に抗議<br>
                 </div>
             </li>
             <li>
                 <div class="histEvent" id="eb1">
-                    <time>1974</time>Basement Workshop’s Community Planning Workshop arm / Michio Kaku’s loft<br>
+                    <time>1974年</time>ベースメント・ワークショップの地域計画ワークショップ部会／ミチオ・カクのロフト<br>
                 </div>
             </li>
             <li>
                 <div class="histEvent" id="l199">
-                    <time>1975</time>
-                    <p class="exact-time"></p>Basement Workshop expands to new location (Keeps 22 Catherine Street for
-                    English classes and other programs)<br>
+                    <time>1975年</time>
+                    <p class="exact-time"></p>ベースメント・ワークショップ、新しい場所に拠点を拡張（キャサリン・ストリート22番地は英語クラスなどのプログラムのために引き続き維持）<br>
                 </div>
             </li>
             <li id="last2">
                 <div class="histEvent" id="c22g">
-                    <time>1975</time>
-                    <p class="exact-time"></p>Children's Arts and Crafts Workshop<br>
+                    <time>1975年</time>
+                    <p class="exact-time"></p>子どもたちのアート＆クラフト教室<br>
                 </div>
             </li>
         </ol>
@@ -143,70 +137,77 @@
         <ol id="t7680">
             <li id="first3">
                 <div class="histEvent" id="b26">
-                    <time>1976</time>
-                    <p class="exact-time"></p>Bob Lee opens the Asian American Arts Centre<br>
+                    <time>1976年</time>
+                    <p class="exact-time"></p>エレノア・ユンがアジアン・アメリカン・ダンス・シアター（AADT）を開設<br>
                 </div>
             </li>
             <li>
                 <div class="histEvent" id="c22d">
-                    <time>1976</time>
-                    <p class="exact-time"></p>Theatre group at Basement Worshop<br>
+                    <time>1976年</time>
+                    <p class="exact-time"></p>ベースメント・ワークショップの演劇グループ<br>
+                </div>
+            </li>
+            <li>
+                <div class="histEvent" id="b26b">
+                    <time>1978</time>
+                    <p class="exact-time"></p>Asian American Dance Theatre (AADT) as a teaching space<br>
                 </div>
             </li>
             <li>
                 <div class="histEvent" id="b26a">
-                    <time>1978</time>
-                    <p class="exact-time">March 18</p>A presentation by Basement Workshop's Bridge Magazine at Asian
-                    American Dance Theater<br>
+                    <time>1978年</time>
+                    <p class="exact-time">3月18日</p>『ブリッジマガジン』に掲載されたアジアン・アメリカン・ダンス・シアターのイベント告知。<br>
                 </div>
             </li>
             <li>
                 <div class="histEvent" id="c22b">
-                    <time>1980</time>
-                    <p class="exact-time"></p>Basement Workshop Closes Lafayette and Returns Solely to 2nd
-                    Location<br>
+                    <time>1980年</time>
+                    <p class="exact-time"></p>ベースメント・ワークショップはラファイエット・ストリートの拠点を閉鎖し、キャサリン・ストリートのみで活動継続<br>
                 </div>
             </li>
             <li>
                 <div class="histEvent" id="m70">
-                    <time>1980</time>
-                    <p class="exact-time"></p>NY Chinatown History Project (Formerly BW, Eventually MOCA)
-                    <br>
+                    <time>1980年</time>
+                    <p class="exact-time"></p>ニューヨーク・チャイナタウン歴史プロジェクト（旧ベースメント・ワークショップ、後のMOCA）<br>
                 </div>
             </li>
             <li id="last3">
                 <div class="histEvent" id="e176">
-                    <time>1980</time>
-                    <p class="exact-time"></p>Asian Americans for Equality offices<br>
+                    <time>1980年</time>
+                    <p class="exact-time"></p>アジアン・アメリカン・フォー・イクオリティの事務所<br>
                 </div>
             </li>
         </ol>
 
         <ol id="t8185">
-            <li id="first4">
+            <li>
                 <div class="histEvent" id="c22e">
-                    <time>1982</time>
-                    <p class="exact-time">September</p>An exhibition by Basement Workshop's Catherine Street Artists
-                    Project showcasing works from 12 artists<br>
+                    <time>1982年</time>
+                    <p class="exact-time">9月</p>ベースメント・ワークショップの「キャサリン・ストリート・アーティスト・プロジェクト」による12人のアーティストの作品展<br>
                 </div>
             </li>
-            <li id="last4">
+            <li>
+                <div class="histEvent" id="c22h">
+                    <time>1983年</time>
+                    <p class="exact-time">2月</p>コラボレーションによるパフォーマンス作品《ピーチフィッシュ》<br>
+                </div>
+            </li>
+            <li>
                 <div class="histEvent" id="c22f">
-                    <time>1985</time>
-                    <p class="exact-time">April</p>Play and poetry readings, exhibits, and workshops at Basement
-                    Workshop<br>
+                    <time>1985年</time>
+                    <p class="exact-time">4月</p>ベースメント・ワークショップでの、演劇、詩の朗読、展示、ワークショップ<br>
                 </div>
             </li>
         </ol>
 
-        <ol id="t8621">
+        <!-- <ol id="t8621">
             <li id="first5">
                 <div class="histEvent" id="wow">
                     <time>2021 </time>
                     <p class="exact-time">August</p>The W.O.W. Project interview<br>
                 </div>
             </li>
-        </ol>
+        </ol> -->
 
         <div class="arrows">
             <button class="arrow arrow__prev disabled" disabled>
@@ -220,7 +221,7 @@
         </div>
     </section>
     <!--Placing script at the bottom so map div will render before map object is initiated-->
-    <script src="app.js"></script>
+    <script src="app_jp.js"></script>
 </body>
 
 </html>
