@@ -67,7 +67,7 @@
   padding: 5px 20px;
   border-radius: 5px;
   top: 3vh;
-  right: 2vw;
+  right: 28px;
   border-color: white;
   text-decoration: none;
 }
@@ -81,6 +81,7 @@
   height: 65vh;
   margin: 10px;
   display: none;
+  margin-bottom: 2vh;
 }
 
 #mapid1 {
@@ -100,6 +101,7 @@ ol {
   justify-content: space-around;
   width: 100%;
   text-align: center;
+  height: 15%;
 }
 
 .map-btn-container button {
@@ -154,6 +156,10 @@ body {
 /* .section SECTION
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.timeline-container {
+  height: 31vh;
+}
+
 .section {
   background: #A5907E;
   padding: 50px 0;
@@ -187,14 +193,16 @@ body {
 .timeline {
   white-space: nowrap;
   overflow-x: hidden;
+  height: 85%;
 }
 
 .timeline ol {
   font-size: 0;
   width: 100vw;
-  padding-top: 150px;
-  padding-bottom: 20px;
+  padding-top: 17vh;
+  /* padding-bottom: 20px; */
   transition: all 1s;
+  margin-bottom: 10px;
   /*--background: linear-gradient(270deg, rgba(165, 144, 126, 0.6) 63.41%, rgba(247, 212, 146, 0) 106.14%);--*/
 }
 
@@ -237,7 +245,7 @@ body {
   position: absolute;
   /* left: calc(100% + 7px); */
   width: 260px;
-  height: 100px !important;
+  height: 11vh !important;
   padding: 12px;
   font-size: 14px;
   white-space: normal;
@@ -249,7 +257,6 @@ body {
 
 .jp ol li div {
   font-size: 13px !important;
-  line-height: 18px !important;
 }
 
 .timeline ol li div::before {
@@ -301,7 +308,6 @@ body {
 .timeline .arrows {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
 }
 
 .timeline .arrows .arrow__prev {
@@ -473,3 +479,10 @@ img {
 figcaption {
   color: #92938A;
 }
+
+/* 
+@media (width < 1000px) {
+  .introduction p {
+    font-size: 16px;
+  }
+} */
