@@ -82,8 +82,9 @@
 
 .close {
   font-size: 28px;
-  float: inline-end;
   color: white;
+  position: absolute;
+  right: 10px;
 }
 
 .close:hover {
