@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <!--<script src="https://d3js.org/d3.v7.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    <script src="https://kit.fontawesome.com/dab79adf09.js" crossorigin="anonymous"></script>
     <!--Leaflet libs-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -46,9 +46,36 @@
                 networks of people and collaborations and we hope to underline these through the exhibition and this
                 collaborative project.</p>
         </div>
-        <div>
-
-            <a id="language" href="#" onclick="switch_lang()">Japanese</a>
+        <a class="open"><i class="fas fa-code"></i></a>
+        <a id="language" href="#" onclick="switch_lang()">Japanese</a>
+        <div class="blur">
+        </div>
+        <div class="popup-overlay">
+            <button class="close">&times;</button>
+            <div class="text-wrapper">
+                <p style="margin:0;">Please copy the code below to embed the map on your own website, and include the
+                    credits:
+                </p>
+                <p style="font-size: 13px;line-height: 14px;">"<i>Basement
+                        Workshop Mapping Project, Special Exhibition, the Virtual Asian American Art Museum, 2022.
+                        Co-curator and developer: Yvonne Fang. Co-curator and researcher: Christina Ong. Organizer
+                        and
+                        Project Manager: Alexandra Chang. In collaboration with the Mori Art Museum, Tokyo and
+                        Asian/Pacific/American Institute at NYU for the exhibition “MAM Research 009: Imagining
+                        Justice
+                        – Asian American Arts Movements” organized by the Mori Art Museum.</i>"</p>
+                <p
+                    style="background-color: #C4C4C4; border-radius: 5px; padding: 10px;height: 30%;display: flex;overflow:auto;color:black;font-family: 'Courier New', monospace;line-height: 1;">
+                    &lt;iframe src="https://yvonnefang.github.io/Basement-Workshop/index.html"
+                    style="overflow:hidden;border:none; min-width:100%;height:95vh;min-height:95vh;"
+                    allowfullscreen&gt;&lt;/iframe&gt;
+                </p>
+                <div>
+                    <a class="response"
+                        href="https://docs.google.com/forms/d/1FiYr1vmEg2TvPAot9GQhBfm4bg1hczzEY1tKpgzSUko/edit?usp=sharing"><b>Let
+                            us know where and why you are using the map!</b></a>
+                </div>
+            </div>
         </div>
         <div class="map" id="mapid1"></div>
         <div class="map" id="mapid2"></div>
