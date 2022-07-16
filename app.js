@@ -46,6 +46,16 @@ function switch_lang() {
     }
 }
 
+//popup for embedding
+$(".open").on("click", function () {
+    $(".popup, .popup-overlay").addClass("active");
+    $(".popup, .blur").addClass("active");
+});
+$(".close, .popup").on("click", function () {
+    $(".popup, .popup-overlay").removeClass("active");
+    $(".popup, .blur").removeClass("active");
+});
+
 function togglePopup() {
 
     document.getElementById("intro-popup").classList.toggle("active");
