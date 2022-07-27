@@ -25,6 +25,7 @@
   text-align: left;
   margin-left: 28px;
   padding: 8px;
+  line-height:1.2;
 }
 
 .close-btn {
@@ -576,11 +577,5 @@ figcaption {
 @media (height < 775px) {
   .timeline ol li div {
     font-size: 14px;
-  }
-}
-
-@media (height < 1095px) and (width < 1852px) {
-  .introduction p {
-    line-height: 1.2;
   }
 }
