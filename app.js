@@ -315,7 +315,7 @@ let c22e = L.marker([40.71304194216185, -73.99735214117389], { icon: redIcon, ti
 markers.push(c22e);
 
 let c22h = L.marker([40.71304194216185, -73.99735214117389], { icon: redIcon, title: "c22h" }).addTo(map4)
-    .bindPopup('<strong>22 Catherine Street</strong><br>Basement Workshop\'s space also served as a space for artists to perform original pieces. In February 1983, "Peachfish," a collaborative performance piece, opened to the public. Written by Jessica Hagedorn with set design by Helen Oji, choreography and directing by Ching Valdes-Aran, and featuring acting by Laurie Carlos, "Peachfish" celebrated the interaction between artists using visual mediums, spoken text, and movement.'
+    .bindPopup('<strong>22 Catherine Street</strong><br>Basement Workshop also served as a space for artists to perform original pieces. In February 1983, "Peachfish," a collaborative performance piece, opened to the public. Written by Jessica Hagedorn with set design by Helen Oji, choreography and directing by Ching Valdes-Aran, and featuring acting by Laurie Carlos, "Peachfish" celebrated the interaction between artists using visual mediums, spoken text, and movement.'
         + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/1983_Peachfish+Set+Design+Study.jpg" alt="a colored draft illustrating various set designs" onclick="zoomImage(this.src)"><figcaption>Helen Oji\'s set design studies for Peachfish. February 1983. Courtesy of Helen Oji.</figcaption></figure>')
 markers.push(c22h);
 
