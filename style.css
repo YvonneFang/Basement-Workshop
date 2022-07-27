@@ -578,3 +578,9 @@ figcaption {
     font-size: 14px;
   }
 }
+
+@media (height < 1095px) and (width < 1852px) {
+  .introduction p {
+    line-height: 1.2;
+  }
+}
