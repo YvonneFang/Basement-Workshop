@@ -290,7 +290,7 @@ map3.addLayer(markers_b26);
 
 let c22b = L.marker([40.71304194216185, -73.99735214117389], { icon: redIcon, title: "c22b" }).addTo(map3)
     .bindPopup('<strong>22 Catherine Street</strong><br>Basement Workshop closed Lafayette St. location in 1980 and returned solely to their second location.'
-        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/BW_Group_Photo_1986.jpg" alt="a black & white group photo" onclick="zoomImage(this.src)"><figcaption>Members of the Basement Workshop pose for a group photo. 1986. Found in Basement Workshop 1986 yearbook.</figcaption></figure>');
+        + '<figure><img src="https://basementworkshopimg.s3.us-east-2.amazonaws.com/BW_Group_Photo_1986.jpg" alt="a black & white group photo" onclick="zoomImage(this.src)"><figcaption>Members of the Basement Workshop pose for a group photo. 1986. Photo by Ching Ming Cheung. Courtesy of Jeannie Chiang.</figcaption></figure>');
 markers.push(c22b);
 
 // Adding marker cluster for C22 on map3
